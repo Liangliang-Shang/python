@@ -57,3 +57,58 @@ The difference between a statement and an expression: an expression is something
 >>> print 2 * pi * r
 6.28
 ```
+
+## Getting Input from the User  
+```Python
+>>> input("x: ")
+x: 0.618
+0.618
+>>> raw_input("x: ")
+x: 0.618
+'0.618'
+```
+
+## Functions  
+```Python
+>>> round(1.0/2.0)
+1.0
+>>> pow(2, 3)
+8
+```
+
+## Modules  
+```Python
+>>> import math
+>>> math.sqrt(100)
+10.0
+```
+
+## Python Script/File
++ shebang
+```Python
+#!/usr/bin/env python
+```
++ Comments
+Make sure your comments say significant things and don't simply restate what is already obvious from the code. 
+
+## Strings
++ Single-Quoted Strings and Escaping Quotes
+```Python
+>>> 'Hello, world!'
+'Hello, world!'
+>>> 'Let\'s go!'
+"Let's go!"
+>>> "Let's go!"
+"Let's go!"
+>>> '"Hello, world!" she said'
+'"Hello, world!" she said'
+>>> '"Hello, world!" she said'
+'"Hello, world!" she said'
+```
++ Concatenating Strings
+```Python
+>>> "Let's say " '"Hello, world!"'
+'Let\'s say "Hello, world!"'
+>>> "Hello, " + "world!"
+'Hello, world!'
+```
