@@ -265,4 +265,35 @@ Multiplying a sequence by a number x creates a new sequence where the original s
 [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 ```
 + None, Empty Lists, and Initialization
+```Python
+>>> emptyList = []
+>>> sequence = [None] * 10
+>>> emptyList
+[]
+>>> sequence
+[None, None, None, None, None, None, None, None, None, None]
+```
++ Membership  
+```Python
+>>> numbers
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+>>> 1 in numbers
+True
+>>> 10 in numbers
+False
+>>> 'P' in 'Python'
+True
+```
++ Length, Minimum, and Maximum
+```Python
+>>> numbers
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+>>> len(numbers)
+10
+>>> min(numbers)
+0
+>>> max(numbers)
+9
+```
 
+## Lists
