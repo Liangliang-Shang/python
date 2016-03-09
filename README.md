@@ -344,3 +344,88 @@ IndexError: list assignment index out of range
 >>> numbers
 [1, 2]
 ```
++ List Methods
+  + append
+  + count
+  + extend
+  + index
+  + insert
+  + pop
+  + remove
+  + reverse
+  + sort
+```Python
+>>> lst = [1, 2, 3]
+>>> lst.append(4)
+>>> lst
+[1, 2, 3, 4]
+>>> ['to', 'be', 'or', 'not', 'to', 'be'].count('to')
+2
+>>> x = [[1, 2], 1, 1, [2, 1, [1, 2]]]
+>>> x.count(1)
+2
+>>> x.count([1, 2])
+1
+```
+Check out the difference betwen extending a list and concatenating it. 
+```Python
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> a.extend(b)
+>>> a
+[1, 2, 3, 4, 5, 6]
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> a + b
+[1, 2, 3, 4, 5, 6]
+>>> a
+[1, 2, 3]
+>>> a[len(a):] = b
+>>> a
+[1, 2, 3, 4, 5, 6]
+```
+```Python
+>>> a
+[1, 2, 3, 4, 5, 6]
+>>> a.index(3)
+2
+>>> a.index(0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 0 is not in list
+>>> numbers = [1, 2, 3, 5, 6, 7]
+>>> numbers.insert(3, 'four')
+>>> numbers
+[1, 2, 3, 'four', 5, 6, 7]
+>>> numbers = [1, 2, 3, 5, 6, 7]
+>>> numbers[3:3] = ['four']
+>>> numbers
+[1, 2, 3, 'four', 5, 6, 7]
+>>> numbers
+[1, 2, 3, 'four', 5, 6, 7]
+>>> numbers.pop()
+7
+>>> numbers
+[1, 2, 3, 'four', 5, 6]
+>>> numbers.pop(0)
+1
+>>> numbers
+[2, 3, 'four', 5, 6]
+>>> numbers.remove('four')
+>>> numbers
+[2, 3, 5, 6]
+>>> numbers.remove(0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> numbers
+[2, 3, 5, 6]
+>>> numbers.reverse()
+>>> numbers
+[6, 5, 3, 2]
+>>> x = [1, 2, 3]
+>>> list(reversed(x))
+[3, 2, 1]
+>>> x
+[1, 2, 3]
+```
