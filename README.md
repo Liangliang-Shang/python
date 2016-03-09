@@ -188,10 +188,81 @@ Normal strings in Python are stored internally as 8-bit ASCII, while Unicode str
 *A data structure is a collection of data elements (such as numbers or characters -- or even other data structures) that is structured in some way, for example, by numbering the elements.*  
 
 *Python has six built-in types of sequences: lists, tuples, strings, Unicode strings, buffer objects, xranges objects.*  
+
+## Sequences  
 ```Python
->>> edward = ['Edward Gumby', 42] 
->>> john = ['John Smith', 50] 
->>> database = [edward, john] 
->>> database 
+>>> edward = ['Edward Gumby', 42]
+>>> john   = ['John Smith', 50]
+>>> database = [edward, john]
+>>> database
 [['Edward Gumby', 42], ['John Smith', 50]]
 ```
++ Indexing  
+All elements in a sequence are numbered - from zero and upwards.  
+_A string is just a sequence of characters._  
+When you use a negative index, Python counts from the right, that is, from the last element. The last element is at position -1 (not -0, as that would be the same as the first element): 
+```Python
+>>> greeting = 'Hello'
+>>> greeting[0]
+'H'
+>>> greeting[-1]
+'o'
+>>> 'Hello'[1]
+'e'
+>>> third = raw_input('Year: ')[2]
+Year: 2016
+>>> third
+'1'
+```
++ Slicing  
+Slicing to access ranges of elements
+```Python
+>>> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+>>> numbers[3:6]
+[4, 5, 6]
+>>> numbers[7:20]
+[8, 9, 0]
+>>> numbers[-3:-1]
+[8, 9]
+>>> numbers[-3:0]
+[]
+>>> numbers[-3:]
+[8, 9, 0]
+>>> numbers[:3]
+[1, 2, 3]
+>>> numbers[:]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+>>> numbers[0:10:2]
+[1, 3, 5, 7, 9]
+>>> numbers[::4]
+[1, 5, 9]
+>>> numbers[10:0:-2]
+[0, 8, 6, 4, 2]
+>>> numbers[5::-2]
+[6, 4, 2]
+>>> numbers[:5:-2]
+[0, 8]
+>>>
+```
++ Adding Sequences
+```Python
+>>> [1, 2, 3] + [4, 5, 6]
+[1, 2, 3, 4, 5, 6]
+>>> 'Hello, ' + 'world!'
+'Hello, world!'
+>>> [1, 2, 3] + 'world!'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate list (not "str") to list
+>>> 
+```
++ Multiplication  
+Multiplying a sequence by a number x creates a new sequence where the original sequence is repeated x times: 
+```Python
+>>> 'Abc' * 3
+'AbcAbcAbc'
+>>> [1, 2, 3] * 5
+[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+```
++ None, Empty Lists, and Initialization
+
