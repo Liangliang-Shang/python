@@ -305,6 +305,9 @@ Create a list from a string
 ```
 + Basic List Operations  
   + Changing Lists: Item Assignments  
+  + Deleting Elements  
+  + Assigning to Slices  
+    Replace/Extend/Insert/Delete...
 ```Python
 >>> x = [1, 1, 1]
 >>> x[1] = 2
@@ -315,7 +318,6 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: list assignment index out of range
 ```
-  + Deleting Elements
 ```Python
 >>> x
 [1, 2, 1]
@@ -324,8 +326,6 @@ IndexError: list assignment index out of range
 [2, 1]
 >>>
 ```
-  + Assigning to Slices  
-    Replace/Extend/Insert/Delete...
 ```Python
 >>> name = list('Perl')
 >>> name
