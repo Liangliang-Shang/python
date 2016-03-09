@@ -184,3 +184,14 @@ Normal strings in Python are stored internally as 8-bit ASCII, while Unicode str
 >>> print u'你好！'
 你好！
 ```
+
+*A data structure is a collection of data elements (such as numbers or characters -- or even other data structures) that is structured in some way, for example, by numbering the elements.*  
+
+*Python has six built-in types of sequences: lists, tuples, strings, Unicode strings, buffer objects, xranges objects.*  
+```Python
+>>> edward = ['Edward Gumby', 42] 
+>>> john = ['John Smith', 50] 
+>>> database = [edward, john] 
+>>> database 
+[['Edward Gumby', 42], ['John Smith', 50]]
+```
