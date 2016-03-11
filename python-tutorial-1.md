@@ -4,6 +4,7 @@
 *Python has six built-in types of sequences: lists, tuples, strings, Unicode strings, buffer objects, xranges objects.*  
 
 ## Sequences  
+A sequence is a data structure in which the elements are numbered (starting with zero). Examples of sequence types are lists, strings, and tuples. Of these, lists are mutable, whereas tuples and strings are immutable. 
 ```Python
 >>> edward = ['Edward Gumby', 42]
 >>> john   = ['John Smith', 50]
@@ -280,4 +281,38 @@ x = [4, 6, 2, 1, 7, 9]
 >>> x.sort(reverse=True)
 >>> x
 [9, 7, 6, 4, 2, 1]
+```
+
+## Tuples: Immutable Sequences
+```Python
+>>> 1, 2, 3
+(1, 2, 3)
+>>> (1, 2, 3)
+(1, 2, 3)
+>>> ()
+()
+>>> 42
+42
+>>> 42, 
+(42,)
+>>> (42,)
+(42,)
+>>> 3 * (42)
+126
+>>> 3 * (42, )
+(42, 42, 42)
+```
+**The comma is crucial for a tuple. Simply adding parentheses won't help: (42) is exactly the same as 42.**
++ the tuple function
++ Basic Tuple Operations
+  + Make tuples  
+  + Access their elements  
+  slices of a tuple are also tuples. 
+```Python
+>>> tuple([1, 2, 3])
+(1, 2, 3)
+>>> tuple('abc')
+('a', 'b', 'c')
+>>> tuple((1, 2, 3))
+(1, 2, 3)
 ```
