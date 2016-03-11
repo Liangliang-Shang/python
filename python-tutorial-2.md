@@ -58,8 +58,99 @@ Pi with three decimals: 3.142
     **c**                   Single character (accepts integer or single character string)  
     **r**                   String (converts any Python object using repr)  
 
+```Python
+>>> pi = math.pi
+>>> pi
+3.141592653589793
+>>> '%10f' % pi
+'  3.141593'
+>>> '%10.2f' % pi
+'      3.14'
+>>> '%.2f' % pi
+'3.14'
+>>> '%.5s' % 'Guido van Rossum'
+'Guido'
+>>> '%.*s' % (5, 'Guido van Rossum')
+'Guido'
+```
+  + Signs, Alignment, and Zero-Padding
+```Python
+>>> print ('% 5d' % 10) + '\n' + ('% 5d' % -10)
+   10
+  -10
+>>> print ('%+5d' % 10) + '\n' + ('%+5d' % -10)
+  +10
+  -10
+```
 
-
-
-
-
++ String Methods  
+  + string.digits
+  + string.letters
+  + string.lowercase
+  + string.printable
+  + string.punctuation
+  + string.uppercase
+  + find/rfind/index/rindex/count/startswith/endswith
+  + join
+  + lower/translate/islower/capitalize/swapcase/title/istitle/upper/isupper
+  + replace/translate/expandtabs
+  + split/rsplit/splitlines
+  + strip/lstrip/rstrip
+  + translate
+```Python
+>>> import string
+>>> string.digits
+'0123456789'
+>>> string.letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> string.lowercase
+'abcdefghijklmnopqrstuvwxyz'
+>>> string.printable
+'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+>>> string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+>>> string.uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> title = "Monty Python's Flying Circus"
+>>> title.find('Monty')
+0
+>>> title.find('Python')
+6
+>>> title.find('Zirquss')
+-1
+>>> subject = '$$$ Get rich now!!! $$$'
+>>> subject.find('$$$')
+0
+>>> subject.find('$$$', 1)
+20
+>>> subject.find('!!!')
+16
+>>> subject.find('!!!', 0, 16)
+-1
+>>> seq = [1, 2, 3, 4, 5]
+>>> sep = '+'
+>>> sep.join(seq)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: sequence item 0: expected string, int found
+>>> sep.join([str(i) for i in seq])
+'1+2+3+4+5'
+>>> 'ABC'.lower()
+'abc'
+>>> '''let's go'''.replace("'s", ' us')
+'let us go'
+>>> '1+2+3+4+5'.split('+')
+['1', '2', '3', '4', '5']
+>>> '*** SPAM * for * everyone!!! ***'.strip(' *!')
+'SPAM * for * everyone'
+>>> from string import maketrans
+>>> table = maketrans(string.lowercase, string.uppercase)
+>>> 'abc'.translate(table)
+'ABC'
+>>> len(table)
+256
+>>> table[97:123]
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> maketrans('', '')[97:123]
+'abcdefghijklmnopqrstuvwxyz'
+```
