@@ -14,7 +14,7 @@
 > Each key is separated from its value by a colon (:)  
 > the items are separated by commas  
 > the whole thing is enclosed in curly braces.  
-> An empty dictionary without any items is written with just two curly braces, like this: {}.   
+> An empty dictionary without any items is written with just two curly braces, like this: {}.  
 
 ```Python
 >>> phonebook = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
@@ -22,7 +22,7 @@
 '3258'
 ```
 
-+ The dict Function
++ The dict Function  
 > The dict function isn't really a function at all. It is a type, just like list, tuple, and str.  
 ```Python
 >>> items = [('name', 'Gumby'), ('age', 42)]          # sequences of (key, value) pairs
@@ -105,4 +105,31 @@ IndexError: list assignment index out of range
   + setdefault
   + update
   + values and itervalues
-  + 
+```Python
+>>> d = {}
+>>> d['name'] = 'Gumby'
+>>> d['age'] = 42
+>>> d
+{'age': 42, 'name': 'Gumby'}
+>>> returned_value = d.clear()
+>>> d
+{}
+>>> print returned_value
+None
+>>> x = {}
+>>> y = x                       # x and y now refer to the same dictionary
+>>> x['key'] = 'value'
+>>> y
+{'key': 'value'}
+>>> x = {}                      # "blank out" x by assigning a new, empty dictionary
+>>> y                           # doesn't affect y at all
+{'key': 'value'}
+>>> x = y                       # x and y now refer to the same dictionary again
+>>> x
+{'key': 'value'}
+>>> y
+{'key': 'value'}
+>>> x.clear()                   # remove all the elements 
+>>> y                           # y is then also empty afterward.  
+{}
+```
