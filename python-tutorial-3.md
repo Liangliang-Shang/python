@@ -1,0 +1,67 @@
+## Dictionary  
+> Telephone numbers (and other numbers that may contain leading zeros) should be represented as strings of digits - not integers.  
+> Octal numbers are written with an initial zero. 
+```Python
+>>> names = ['Alice', 'Beth', 'Cecil', 'Dee-Dee', 'Earl']
+>>> numbers = ['2341', '9102', '3158', '0142', '5551']
+>>> numbers[names.index('Cecil')]
+'3158'
+```
+
++ Dictionary Syntax
+> Dictionaries consist of pairs (called items) of keys and their corresponding values.  
+> Each key is separated from its value by a colon (:)  
+> the items are separated by commas  
+> the whole thing is enclosed in curly braces.  
+> An empty dictionary without any items is written with just two curly braces, like this: {}.  
+
+```Python
+>>> phonebook = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
+>>> phonebook['Cecil']
+'3258'
+```
+
++ The dict Function
+> The dict function isn't really a function at all. It is a type, just like list, tuple, and str.  
+```Python
+>>> items = [('name', 'Gumby'), ('age', 42)]          # sequences of (key, value) pairs
+>>> d = dict(items)
+>>> d
+{'age': 42, 'name': 'Gumby'}
+>>> d['name']
+'Gumby'
+>>> d = dict(name='Gumby', age=42)                    # using keyword arguments
+>>> d
+{'age': 42, 'name': 'Gumby'}
+```
+
++ Basice Dictionary Operations  
+
+```Python
+>>> d
+{'age': 42, 'name': 'Gumby'}
+>>> len(d)
+2
+>>> d['name']
+'Gumby'
+>>> 'name' in d
+True
+>>> del d['name']
+>>> d
+{'age': 42}
+```
+
+```Python
+>>> x = []
+>>> x[6] = 'Foobar'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list assignment index out of range
+>>> x = [None] * 7
+>>> x[6] = 'Foobar'
+>>> x
+[None, None, None, None, None, None, 'Foobar']
+>>> x = {}
+>>> x[42] = 'Foobar'
+>>> x
+{42: 'Foobar'}
