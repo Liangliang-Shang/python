@@ -1,6 +1,7 @@
 ## Dictionary  
 > Telephone numbers (and other numbers that may contain leading zeros) should be represented as strings of digits - not integers.  
-> Octal numbers are written with an initial zero. 
+> Octal numbers are written with an initial zero.  
+
 ```Python
 >>> names = ['Alice', 'Beth', 'Cecil', 'Dee-Dee', 'Earl']
 >>> numbers = ['2341', '9102', '3158', '0142', '5551']
@@ -8,12 +9,12 @@
 '3158'
 ```
 
-+ Dictionary Syntax
++ Dictionary Syntax  
 > Dictionaries consist of pairs (called items) of keys and their corresponding values.  
 > Each key is separated from its value by a colon (:)  
 > the items are separated by commas  
 > the whole thing is enclosed in curly braces.  
-> An empty dictionary without any items is written with just two curly braces, like this: {}.  
+> An empty dictionary without any items is written with just two curly braces, like this: {}.   
 
 ```Python
 >>> phonebook = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
@@ -65,3 +66,43 @@ IndexError: list assignment index out of range
 >>> x[42] = 'Foobar'
 >>> x
 {42: 'Foobar'}
+```
+
++ String Formatting with Dictionaries  
+```Python
+>>> phonebook
+{'Beth': '9102', 'Alice': '2341', 'Cecil': '3258'}
+>>> "Cecil's phone number is %(Cecil)s." % phonebook
+"Cecil's phone number is 3258."
+>>> template = '''<html>
+... <head><title>%(title)s</title></head>
+... <body>
+... <h1>%(title)s</h1>
+... <p>%(text)s</p>
+... </body>
+... </html>'''
+>>> data = {'title': 'My Home Page', 'text': 'Welcome to my home page!'}
+>>> print template % data
+<html>
+<head><title>My Home Page</title></head>
+<body>
+<h1>My Home Page</h1>
+<p>Welcome to my home page!</p>
+</body>
+</html>
+```
+
++ Dictionary Methods
+  + clear
+  + copy
+  + fromkeys
+  + get
+  + has_key
+  + items and iteritems
+  + keys and iterkeys
+  + pop 
+  + popitem
+  + setdefault
+  + update
+  + values and itervalues
+  + 
