@@ -133,3 +133,103 @@ None
 >>> y                           # y is then also empty afterward.  
 {}
 ```
+```Python
+>>> x = {'username': 'admin', 'machines': ['foo', 'bar', 'baz']}
+>>> y = x.copy()  # return a new dictionary with the same key-value pairs(a shallow copy, the values themselves are the same, not copies)
+>>> x
+{'username': 'admin', 'machines': ['foo', 'bar', 'baz']}
+>>> y
+{'username': 'admin', 'machines': ['foo', 'bar', 'baz']}
+>>> y['username'] = 'mlh'
+>>> y['machines'].remove('bar')
+>>> y
+{'username': 'mlh', 'machines': ['foo', 'baz']}
+>>> x
+{'username': 'admin', 'machines': ['foo', 'baz']}
+>>> from copy import deepcopy
+>>> d = {}
+>>> d['names'] = ['Alfred', 'Bertrand']
+>>> c = d.copy()
+>>> dc = deepcopy(d)
+>>> from copy import deepcopy
+>>> d = {}
+>>> d['names'] = ['Alfred', 'Bertrand']
+>>> c = d.copy()
+>>> dc = deepcopy(d)
+```
+```Python
+>>> {}.fromkeys(['name', 'age'])  # {} constructs an empty dictionary and calls the fromkeys method to create another dictionary 
+{'age': None, 'name': None}
+>>> {}.fromkeys(['name', 'age'])  # call the method directly on dict
+{'age': None, 'name': None}
+>>> dict.fromkeys(['name', 'age'], '(unknown)') # supplied the default value: '(unknown)'
+{'age': '(unknown)', 'name': '(unknown)'}
+```
+```Python
+>>> d = {}
+>>> print d['name']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'name'
+>>> print d.get('name')   # no exceiption when using get to access a nonexistent key
+None
+>>> d.get('name', 'N/A')
+'N/A'
+>>> d['name'] = 'Eric'
+>>> d.get('name')
+'Eric'
+```
+```Python
+>>> d = {}
+>>> d.has_key('name') == True # check whether a dictionary has a given key, equivalent to k in d
+False
+>>> d['name'] = 'Eric'
+>>> d.has_key('name') == True
+True
+```
+```Python
+>>> d = {'name': 'lynn', 'age': 30}
+>>> d.items()
+[('age', 30), ('name', 'lynn')]
+>>> it = d.iteritems()
+>>> it
+<dictionary-itemiterator object at 0x7fa620110f18>
+>>> list(it)    # convert the iterator to a list
+[('age', 30), ('name', 'lynn')]
+```
+```Python
+>>> d = {'x': 1, 'y': 2}
+>>> d.pop('x')            # return the value corresponding to a given key, and then remove the key-value pair from the dictionary 
+1
+>>> d
+{'y': 2}
+```
+```Python
+>>> d = {'x': 1, 'y': 2, 'z': 3}
+>>> d.popitem()           # pops off a random item, may be useful if you want to remove and process the items one by one
+('y', 2)
+```
+```Python
+>>> d = {}
+>>> d.setdefault('name', 'N/A')   # sets the value corresponding to the given key if it is not already in the dictionary
+'N/A'
+>>> d
+{'name': 'N/A'}
+>>> d['name'] = 'Lynn'
+>>> d.setdefault('name', 'N/A')
+'Lynn'
+>>> d
+{'name': 'Lynn'}
+>>> d = {}
+>>> print d.setdefault('name')    # The default is optional; if it is left out, None is used
+None
+>>> d
+{'name': None}
+```
+```Python
+>>> d = {'x': 1, 'y': 2, 'z': 3}
+>>> x = {'x': 21}
+>>> d.update(x)
+>>> d
+{'y': 2, 'x': 21, 'z': 3}
+```
