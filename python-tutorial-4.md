@@ -60,8 +60,8 @@ A block is a group of statements that can be executed if a condition is true (co
 or executed several times (loops), and so on. A block is created by indenting a part of your code; that is,    
 putting spaces in front of it.    
 
-### Conditions and Conditional Statements  
-> False Values:    
+### Conditions and Conditional Statements    
+> False Values:      
 > False    None    0    ""    ()    []    {}    
 ```Python
 >>> True
