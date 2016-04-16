@@ -63,6 +63,7 @@ putting spaces in front of it.
 ### Conditions and Conditional Statements    
 > False Values:      
 > False    None    0    ""    ()    []    {}    
+
 ```Python
 >>> True
 True
