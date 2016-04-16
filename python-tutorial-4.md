@@ -11,7 +11,7 @@ Age: 42                 # A space character is inserted between each argument.
 >>> name = 'Gumby'
 >>> salutation = 'Mr.'
 >>> greeting = 'Hello,'
->>> print greeting, salutation, name    # combine text and variable values without using the full power of string formatting
+>>> print greeting, salutation, name # combine text and variable values without using the full power of string formatting
 Hello, Mr. Gumby
 >>> greeting = 'Hello'                        # greeting had no comma
 >>> print greeting, ',', salutation, name     # add ','
@@ -58,7 +58,7 @@ from somemodule import *
 ## Block & Indentation  
 A block is a group of statements that can be executed if a condition is true (conditional statements),    
 or executed several times (loops), and so on. A block is created by indenting a part of your code; that is,    
-putting spaces in front of it.  
+putting spaces in front of it.    
 
 ### Conditions and Conditional Statements  
 > False Values:    
