@@ -58,9 +58,9 @@ Evening, Gumby!
 >>> hello(greeting='Evening', name='Gumby')     # two keyword parameters and parameter order does not matter
 Evening, Gumby!
 >>> def greeting(name, greeting='Hello', punctuation='!'):    # combining positional and keyword parameters
-...     print '%s, %s%s' % (greeting, name, punctuation)      # requiring all the postional parameters come first
+...     print '%s, %s%s' % (greeting, name, punctuation)
 ... 
->>> greeting('Mars')                     # default the other two parameters
+>>> greeting('Mars')                     # requiring the positional parameter come first, default the others
 Hello, Mars!
 >>> greeting('Mars', 'Howdy')            # default the third parameter
 Howdy, Mars!
@@ -75,3 +75,48 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: greeting() takes at least 1 argument (0 given)
 ```
++ Collecting Parameters  
+```Python
+>>> def printParams(title, *params):    # the star means "Gather up the rest of the positional parameters
+...     print title
+...     print params
+... 
+>>> printParams('Params:', 1, 2, 3)
+Params:
+(1, 2, 3)                               # Gather up  1, 2, 3 into params tuple
+>>> def printKeywordParams(**params):   # Gather up keyword parameters 
+...     print params
+... 
+>>> printKeywordParams(x=1, y=2, z=3)
+{'y': 2, 'x': 1, 'z': 3}
+>>> def printAllParams(x, y, z=3, *pospar, **keypar):
+...     print x, y, z
+...     print pospar
+...     print keypar
+... 
+>>> printAllParams(1, 2, 3, 5, 6, 7, foo=1, bar=2)
+1 2 3
+(5, 6, 7)
+{'foo': 1, 'bar': 2}
+```
+```Python
+>>> def printPosParams(*params):
+...     for index, param in enumerate(params):
+...             print index, param
+... 
+>>> l = ('a', 'b')         # already have parameters into a list l
+>>> printPosParams(l)      # take l as the whole one, rather than all the elements in the list as params
+0 ('a', 'b')
+>>> printPosParams(*l)     # distribute l into params, it is what we want!
+0 a
+1 b
+>>> def printKeywordParams(**params):
+...     for key in params: 
+...             print key, params[key]
+... 
+>>> d = {'a': 'A', 'b': 'B'}    # already package a='A', b='B' keyword params into a dict d
+>>> printKeywordParams(**d)     # using two stars both  when defining and calling the function
+a A
+b B
+```
+
