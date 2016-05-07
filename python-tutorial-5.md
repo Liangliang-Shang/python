@@ -165,8 +165,9 @@ Shrubberry
 ## Recursion   
 A useful recursive function usually consists of the following parts:  
 + A base case (for the smallest possible problem) when the function returns a value directly  
-+ A recursive case, which contains one or more recusrive calls on smaller parts of the problem  
-### Factorial  
++ A recursive case, which contains one or more recusrive calls on smaller parts of the problem    
+    
+### Factorial    
 ```Python
 >>> def factorial(n):
 ...     if n == 1:
