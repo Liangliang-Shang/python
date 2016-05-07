@@ -119,4 +119,46 @@ Params:
 a A
 b B
 ```
-
+## Scoping
+```Python
+>>> x = 1
+>>> scope = vars()        # equivalent to locals(), return a dict containing variables/values
+>>> scope['x']
+1
+>>> scope['x'] += 1
+>>> x
+2
+```
+This sort of dictionary is called a namespace or scope.  
+In addition to the global scope, each function call creates a new one: 
+```Python
+>>> def foo():    # a new function, a new namespace for the block inside foo
+...     x = 42    # local variable that doesn't affect the x in the outer (global) scope
+... 
+>>> x = 1
+>>> foo()
+>>> x
+1
+>>> def combine(parameter): print parameter + external    # external is not defined 
+... 
+>>> external = 'berry'
+>>> combine('Shrub')
+Shrubberry
+>>> def combine(parameter):
+...     print parameter + globals()['parameter']         # the global variable parameter is shadowed by the local one
+... 
+>>> parameter = 'berry'
+>>> combine('Shrub')
+Shrubberry
+```
++ Rebinding Global Variables
+```Python
+>>> x = 1
+>>> def change_global():
+...     global x
+...     x = x + 1
+... 
+>>> change_global()
+>>> x
+2
+```
