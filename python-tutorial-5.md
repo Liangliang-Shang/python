@@ -144,7 +144,7 @@ In addition to the global scope, each function call creates a new one:
 >>> external = 'berry'
 >>> combine('Shrub')
 Shrubberry
->>> def combine(parameter):                       # the global variable parameter is shadowed by the local one
+>>> def combine(parameter):     # the global variable parameter is shadowed by the local one
 ...     print parameter + globals()['parameter']  # Got the global one 
 ... 
 >>> parameter = 'berry'
