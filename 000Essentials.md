@@ -212,3 +212,34 @@ print digit2NumberDefault(**{'b':2, 'c':3})        # like above, and apply a wit
     123
     23
     
+
+
+```python
+import numpy as np
+npdata = np.genfromtxt('data.csv', skip_header=1, dtype=None, delimiter=',')
+```
+
+
+```python
+import pandas as pd
+pddata = pd.read_csv('data.csv', header=0, sep=',')
+print type(pddata)
+pddata.to_csv('data2.tab', index=True, sep=',')
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    
+
+
+```python
+d = {'a': 7, 'b': 15, 'c': 33, 'd': 22}
+print sorted(d.iteritems(), key=lambda x: x[1], reverse=True)
+```
+
+    [('c', 33), ('d', 22), ('b', 15), ('a', 7)]
+    
+
+
+```python
+
+```
