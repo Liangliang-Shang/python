@@ -33,6 +33,7 @@ def recursiveFactorial(n=0):
         return 1
     else: 
         return n * recursiveFactorial(n-1)
+        
 (commonFactorial(), commonFactorial(-1), commonFactorial(0), commonFactorial(5), 
 recursiveFactorial(), recursiveFactorial(-1), recursiveFactorial(0), recursiveFactorial(5))    
 
