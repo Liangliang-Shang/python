@@ -39,7 +39,42 @@ recursiveFactorial(), recursiveFactorial(-1), recursiveFactorial(0), recursiveFa
 
 (1, 1, 1, 120, 1, 1, 1, 120)    
 ```
+```Python
+def recursiveFib(n=0):
+    '''
+    recursiveFib(n=0) -> int
+    
+    calculate fib number fib(n) = fib(n-1) + fib(n-2)
+    '''
+    if n in (1, 2):
+        return 1
+    else: 
+        return fib(n-1) + fib(n-2)
 
+def sequentialFib(n=0):
+    '''
+    sequentialFib(n=0) -> int
+    
+    calculate fib number sequentially, 
+    init a list l = [1, 1], l.append(l[1] + l[0]) ( actually l[2] = 1 + 1 )
+    and so on quentially calculate fib numbers
+    return the list [n-1]
+    '''
+    l = [1, 1]
+    
+    for x in xrange(n):
+        if x in (0, 1): 
+            continue
+        else:
+            l.append(l[x-1] + l[x-2])
+    else: 
+        return l[n-1]
+    
+(recursiveFib(1), recursiveFib(2), recursiveFib(3), recursiveFib(4), recursiveFib(5), 
+ sequentialFib(1), sequentialFib(2), sequentialFib(3), sequentialFib(4), sequentialFib(5))
+
+(1, 1, 2, 3, 5, 1, 1, 2, 3, 5)
+```
 
 ```Python
 def f(a, b):
