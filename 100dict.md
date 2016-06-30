@@ -101,8 +101,8 @@ d = {}
 sort a dict by key/value
 '''
 d = {'a': 7, 'b': 15, 'c': 33, 'd': 22}
-( sorted(d.iteritems(), key=lambda x: x[0], reverse=False), # sort the dict by key 
-sorted(d.iteritems(), key=lambda x: x[1], reverse=True) )   # sort the dict by value
+( sorted(d.iteritems(), key=lambda x: x[0], reverse=False),    # sort the dict by key 
+  sorted(d.iteritems(), key=lambda x: x[1], reverse=True) )    # sort the dict by value
 ```
 
 
