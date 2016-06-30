@@ -23,3 +23,33 @@ for row in range(4):
 				''.join(['Row', str(row), 'Col', str(col)]), style)
 workbook.save('xlwt.xls')
 ```
+## Pickle
+
+
+
+
+
+```python
+import pickle
+fName		= ""
+fSuffix		= 'pickle'
+fPickle		= '.'.join([fName, fSuffix])
+i			= 19700101
+s			= 'Python'
+l			= range(10)
+d			= { '97': 'a', '98': 'b' }
+with open(fPickle, 'wb') as f: 
+	pickle.dump((i, s, l, d), f)
+
+with open(fPickle, 'rb') as f: 
+	i, s, l, d = pickle.load(f)
+	print i, s, l, d
+```
+
+    19700101 Python [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] {'98': 'b', '97': 'a'}
+    
+
+
+```python
+
+```
