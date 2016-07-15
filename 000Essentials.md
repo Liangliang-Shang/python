@@ -240,6 +240,36 @@ print sorted(d.iteritems(), key=lambda x: x[1], reverse=True)
     
 
 
-```python
 
+
+```python
+# Context Manager 
+class Apollo(object):
+        def __init__(self, text):
+                self.old = ''
+                self.new = text
+                print('In __init__: ' + ' '.join([self.old, self.new]))
+
+        def __enter__(self):
+                self.old = self.new
+                self.new = 'Now __enter__: ' + self.new
+                print('In __enter__: ' + ' '.join([self.old, self.new]))
+
+                return self
+
+        def __exit__(self, exec_type, exec_value, traceback):
+                self.new = 'Now __exit__: ' + self.old
+                print('In __exit__: '  + ' '.join([self.old, self.new]))
+
+with Apollo("Man's small step!") as apollo:
+        print('In context: ' + ' '.join([apollo.old, apollo.new]))
+
+print('Out of context: ' + ' '.join([apollo.old, apollo.new]))
 ```
+
+    In __init__:  Man's small step!
+    In __enter__: Man's small step! Now __enter__: Man's small step!
+    In context: Man's small step! Now __enter__: Man's small step!
+    In __exit__: Man's small step! Now __exit__: Man's small step!
+    Out of context: Man's small step! Now __exit__: Man's small step!
+
