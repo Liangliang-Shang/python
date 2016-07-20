@@ -1,3 +1,30 @@
+## Environment Variables for Python
+1. PYTHONSTARTUP    
+Similar to .profile for UNIX Shells. Set PYTHONSTARTUP to the name of a file containing your start-up commands.
+
++ python start up file to set up Python PS1/PS2    
+```Python
+$ cat .pythonrc.py
+#!/usr/bin/env ipython
+import sys
+sys.ps1 = 'Run Python: '
+sys.ps2 = 'Continue... '
+```    
++ export env var PYTHONSTARTUP    
+```Bash
+$ export PYTHONSTARTUP=.pythonrc.py
+```    
++ start python with new PS1/PS2    
+```Python
+$ python
+Python 2.7.3 (default, Dec 18 2012, 13:50:09)
+[GCC 4.5.3] on cygwin
+Type "help", "copyright", "credits" or "license" for more information.
+Run Python: print \
+Continue... 'Hello World'
+Hello World
+Run Python: 
+```
 
 
 ```python
