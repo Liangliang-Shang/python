@@ -19,7 +19,7 @@ Hello, world!
 10
 >>> 1/2
 0
->>> from __future__ import division
+>>> from __future__ import division  # command-line switch: -Qnew for such division
 >>> 1/2
 0.5
 ```
