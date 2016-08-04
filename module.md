@@ -24,11 +24,6 @@ for row in range(4):
 workbook.save('xlwt.xls')
 ```
 ## Pickle
-
-
-
-
-
 ```python
 import pickle
 fName		= ""
@@ -48,8 +43,21 @@ with open(fPickle, 'rb') as f:
 
     19700101 Python [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] {'98': 'b', '97': 'a'}
     
-
-
+## numpy, pandas, matplotlib.pyplot, matplotlib.dates
 ```python
-
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdate
+idx  = pd.date_range(start='09:15:00', end='14:55:00', freq='5min')
+nidx = pd.date_range(start='09:30:00', end='14:30:00', freq='30min')
+df   = pd.DataFrame(np.random.randn(len(idx)), index=idx, columns=list('A'))
+fig, ax = plt.subplots()
+ax.plot(df)
+ax.xaxis.set_major_formatter(mdate.DateFormatter('%H:%M'))
+plt.xticks(nidx.insert(0, idx[0]).insert(-1, idx[-1]))
+for xl in ax.get_xticklabels():
+    xl.set_rotation(45)
+plt.grid(True)
+plt.show()
 ```
