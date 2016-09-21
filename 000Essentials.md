@@ -26,6 +26,14 @@ Hello World
 Run Python: 
 ```
 
+2. Zip two lists into a dict
+```Python
+>>> keys = ('a', 'b', 'c')
+>>> vals = (1, 2, 3)
+>>> d    = dict(zip(keys, vals))
+>>> d
+{'a': 1, 'c': 3, 'b': 2}
+```
 
 ```python
 # precise division
