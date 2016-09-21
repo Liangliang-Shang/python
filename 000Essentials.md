@@ -1,5 +1,5 @@
-## Environment Variables for Python
-1. PYTHONSTARTUP    
+# Environment Variables for Python
+## PYTHONSTARTUP    
 Similar to .profile for UNIX Shells. Set PYTHONSTARTUP to the name of a file containing your start-up commands.
 
 + python start up file to set up Python PS1/PS2    
@@ -26,7 +26,7 @@ Hello World
 Run Python: 
 ```
 
-2. Zip two lists into a dict
+## Zip two lists into a dict
 ```Python
 >>> keys = ('a', 'b', 'c')
 >>> vals = (1, 2, 3)
