@@ -1,5 +1,5 @@
-# Environment Variables for Python
-## PYTHONSTARTUP    
+## Environment Variables for Python
+### PYTHONSTARTUP    
 Similar to .profile for UNIX Shells. Set PYTHONSTARTUP to the name of a file containing your start-up commands.
 
 + python start up file to set up Python PS1/PS2    
