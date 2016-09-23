@@ -117,7 +117,7 @@ Make sure your comments say significant things and don't simply restate what is 
 
 ## Strings    
 + Single-Quoted/Double-Quoted/Triple-Quoted Strings and Escaping Quotes
-```Python
+  ```Python
 >>> 'Hello, world!'                     # Single-Quoted string
 'Hello, world!'
 >>> 'Let\'s go!'                        # Back-slash to escapte the single quote in a single-quoted string
