@@ -67,6 +67,11 @@ a number like 5, 1.23, or a string like 'This is a string' or "It's a string!"
 
 ## Variables  
 A variable is basically a name that represents (or refers to) some value.  Variable names can consist of letters, digits and underscore characters(_). A variable can't begin with a digit. 
++ Data Type
+  * number
+  * string
+  * object
+    Everything is an object in Python including number, string, functions
 ```Python
 >>> pi = 3.14
 >>> r  = 1
@@ -118,6 +123,8 @@ x: 0.618
 ```
 + Comments  
 Make sure your comments say significant things and don't simply restate what is already obvious from the code. 
++ Indentation    
+Use four spaces for indentation.    
 
 ## Strings    
 + Single-Quoted/Double-Quoted/Triple-Quoted Strings and Escaping Quotes    
@@ -164,7 +171,7 @@ Hello, world!
 10
 ```  
 + Raw Strings  
-Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. It is very helpful when you using a Windows file system path or in a regular expression. 
+Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. It is very helpful when you are writing a Windows file system path or in a regular expression. 
 
 ```Python
 >>> print 'Hello,\nworld!'
@@ -286,6 +293,6 @@ print '{0:0<17} = {0:,}'.format(pi * 1000000)            # 314,159.26
     3141592.600000000 = 3,141,592.6
 
 ```Python
->>> print('{0}{1: ^72}{0}'.format('+', 'README'))    # fill with ' ' with the text centered in 72 width
+>>> print('{0}{1: ^72}{0}'.format('+', 'README'))         # fill with ' ' with the text centered in 72 width
 +                                 README                                 +
 ```
