@@ -120,7 +120,7 @@ x: 0.618
 Make sure your comments say significant things and don't simply restate what is already obvious from the code. 
 
 ## Strings    
-+ Single-Quoted/Double-Quoted/Triple-Quoted Strings and Escaping Quotes
++ Single-Quoted/Double-Quoted/Triple-Quoted Strings and Escaping Quotes    
 ```Python
 >>> 'Hello, world!'                     # Single-Quoted string
 'Hello, world!'
@@ -149,8 +149,9 @@ Still here.
 
 + Escaping Sequences & Continuing lines    
   * \', \", \\, \t, \n
-  * \
-    \ is the last character of the line in python, which means the next line continues the last line.    
+  * \    
+    if \ is the last character of the line in python, which means the next line continues the last line.    
+
 ```Python
 >>> print "Hello, \
 ... world!"
@@ -164,6 +165,7 @@ Hello, world!
 ```  
 + Raw Strings  
 Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. A simple way of putting the backslash at the end of a string is:    
+
 ```Python
 >>> print 'Hello,\nworld!'
 Hello,
@@ -185,12 +187,14 @@ C:\Program Files\
 
 + Unicode Strings  
 Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world.    
+
 ```Python
 >>> print u'你好！'
 你好！
 ```
 
 + Concatenating Strings    
+
 ```Python
 >>> "Let's say " '"Hello, world!"'
 'Let\'s say "Hello, world!"'
@@ -198,8 +202,9 @@ Normal strings in Python are stored internally as 8-bit ASCII, while Unicode str
 'Hello, world!'
 ```
 
-+ String Representations, str and repr  
-_str_ simply converts a value into a string in some reasonable fashion that will probably be understood by a user, and _repr_, which creates a string that is representation of the value as a legal Python expression. 
++ String Representations, str and repr    
+_str_ simply converts a value into a string in some reasonable fashion that will probably be understood by a user, and _repr_, which creates a string that is representation of the value as a legal Python expression.    
+
 ```Python
 >>> "Hello, world!"
 'Hello, world!'
