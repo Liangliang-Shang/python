@@ -199,8 +199,6 @@ print '{0:0<17} = {0:,}'.format(pi * 1000000)            # 314,159.26
 ```
 ### Variable
 #### Identifier Naming
-## Zip two lists into a dict
-
 ### Data Types
 + numbers
 + strings
@@ -221,6 +219,34 @@ if, elif, else, while, for, continue, break
 
 ### Functions
 #### Function Parameters
+##### Local Variables
+Variable names are local to the function, called the scope of the variable. 
+##### Global Variables
+Using global statement
+##### Default Argument Values
++ Position Argument
++ Keyword Argument
+##### VarArg
+##### Return
+```python
+# paremeter/arguments
+def digit2Number(a, b, c):
+    return a*100 + b*10 +c
+def digit2NumberDefault(a=0, b=0, c=0):
+    return a*100 + b*10 + c
+print digit2Number(1, 2, 3)                        # three seperate parameters
+print digit2Number(*[1, 2, 3])                     # one list parameter, * to unpack it
+
+print digit2NumberDefault(**{'b':2, 'c':3, 'a':1}) # one dict parameter, ** to unpack it
+print digit2NumberDefault(**{'b':2, 'c':3})        # like above, and apply a with default value 0
+```
+    123
+    123
+    123
+    23
+##### Docstrings
+
+## Zip two lists into a dict
 
 ```Python
 >>> keys = ('a', 'b', 'c')
@@ -354,26 +380,6 @@ print zip(*zip(i, s))                              #
     3 c
     4 d
     [(1, 2, 3, 4), ('a', 'b', 'c', 'd')]
-    
-
-
-```python
-# paremeter/arguments
-def digit2Number(a, b, c):
-    return a*100 + b*10 +c
-def digit2NumberDefault(a=0, b=0, c=0):
-    return a*100 + b*10 + c
-print digit2Number(1, 2, 3)                        # three seperate parameters
-print digit2Number(*[1, 2, 3])                     # one list parameter, * to unpack it
-
-print digit2NumberDefault(**{'b':2, 'c':3, 'a':1}) # one dict parameter, ** to unpack it
-print digit2NumberDefault(**{'b':2, 'c':3})        # like above, and apply a with default value 0
-```
-
-    123
-    123
-    123
-    23
     
 
 
