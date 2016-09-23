@@ -164,6 +164,7 @@ Hello, world!
 ```  
 + Raw Strings  
 Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. A simple way of putting the backslash at the end of a string is:    
+    
   ```Python
 >>> print 'Hello,\nworld!'
 Hello,
@@ -208,6 +209,7 @@ Hello, world!
 ```
 + Unicode Strings  
 Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world.    
+    
   ```Python
 >>> print u'你好！'
 你好！
