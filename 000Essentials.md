@@ -113,6 +113,18 @@ This is the second line.
 He said "Bond, James Bond."
 '''
 ```
+#### Escapte Sequence
+\' \" \\ \t \n
+```Python
+>>> 'what\'s your name?'    # "what's your name?"
+"what's your name?"
+>>> print 'a character \\'  # \\ to escape \ 
+a character \
+```
+#### Raw String
+Always use raw strings when dealing with regular expressions in case there are a lot of backwhacking.    
+'\\1' or r'\1'
+
 #### Strings Are Immutable
 Once you have created a string, you cannot change it. 
 
@@ -185,8 +197,31 @@ print '{0:0<17} = {0:,}'.format(pi * 1000000)            # 314,159.26
 >>> print('{0}{1: ^72}{0}'.format('+', 'README'))
 +                                 README                                 +
 ```
-
+### Variable
+#### Identifier Naming
 ## Zip two lists into a dict
+
+### Data Types
++ numbers
++ strings
++ classes
+#### Object
+Everything in Python is an object including numbers, strings and functions. 
+
+### Indentation
+Leading whitespace (spaces and tabs) at the beginning of the logical line is used to determine the indentation level of the logical line, which in turn is used to determine the grouping of statements. 
+
+Use for spaces for indentation
+
+### Operators and Expressions
+-, +, *, /, **, //, %, not, and, or 
+
+### Control Flow
+if, elif, else, while, for, continue, break
+
+### Functions
+#### Function Parameters
+
 ```Python
 >>> keys = ('a', 'b', 'c')
 >>> vals = (1, 2, 3)
