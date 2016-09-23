@@ -72,22 +72,16 @@ A variable is basically a name that represents (or refers to) some value.  Varia
   * number
   * string
   * object    
-    Everything is an object in Python including number, string, functions.
-```Python
->>> pi = 3.14
->>> r  = 1
->>> 2 * pi * r
-6.28
-```
+    Everything is an object in Python including number, string, functions.    
 
 ## Statements  
 The difference between a statement and an expression: an expression is something, while a statement does something. 
 ```Python
->>> pi = 3.14
->>> r  = 1
->>> 2 * pi * r
+>>> pi = 3.14                 # statement, assign 3.14 to pi
+>>> r  = 1                    # statement, assign 1 to r
+>>> 2 * pi * r                # expression, evaluated and printed in the interactive mode
 6.28
->>> print 2 * pi * r
+>>> print 2 * pi * r          # statement, print out the evaluation
 6.28
 ```
 
