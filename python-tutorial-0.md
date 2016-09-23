@@ -143,38 +143,11 @@ Still here.
 >>> 
 ```
 
-+ Escaping Sequences    
++ Escaping Sequences & Continuing lines    
   * \', \", \\, \t, \n
-
-+ Concatenating Strings    
-```Python
->>> "Let's say " '"Hello, world!"'
-'Let\'s say "Hello, world!"'
->>> "Hello, " + "world!"
-'Hello, world!'
-```
-
-+ String Representations, str and repr  
-_str_ simply converts a value into a string in some reasonable fashion that will probably be understood by a user, and _repr_, which creates a string that is representation of the value as a legal Python expression. 
-```Python
->>> "Hello, world!"
-'Hello, world!'
->>> 10000L
-10000L
->>> print "Hello, world!"
-Hello, world!
->>> print 10000L
-10000
->>> print repr("Hello, world!")
-'Hello, world!'
->>> print repr(10000L)
-10000L
-```
-
-+ Long Strings, Raw Strings, and Unicode
-```Python
-```
-```Python
+  * \
+    \ is the last character of the line in python, which means the next line continues the last line.    
+  ```Python
 >>> print "Hello, \
 ... world!"
 Hello, world!
@@ -184,11 +157,10 @@ Hello, world!
 >>> 1 + 2 + \
 ...     3 + 4
 10
-```
-
+```  
 + Raw Strings  
 Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. A simple way of putting the backslash at the end of a string is: 
-```Python
+  ```Python
 >>> print 'Hello,\nworld!'
 Hello,
 world!
@@ -205,6 +177,30 @@ SyntaxError: EOL while scanning string literal
 >>> print r"C:\Program Files" '\\'
 C:\Program Files\
 >>> 
+```
++ Concatenating Strings    
+  ```Python
+>>> "Let's say " '"Hello, world!"'
+'Let\'s say "Hello, world!"'
+>>> "Hello, " + "world!"
+'Hello, world!'
+```
+
++ String Representations, str and repr  
+_str_ simply converts a value into a string in some reasonable fashion that will probably be understood by a user, and _repr_, which creates a string that is representation of the value as a legal Python expression. 
+  ```Python
+>>> "Hello, world!"
+'Hello, world!'
+>>> 10000L
+10000L
+>>> print "Hello, world!"
+Hello, world!
+>>> print 10000L
+10000
+>>> print repr("Hello, world!")
+'Hello, world!'
+>>> print repr(10000L)
+10000L
 ```
 + Unicode Strings  
 Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world. 
