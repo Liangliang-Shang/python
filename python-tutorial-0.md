@@ -1,16 +1,36 @@
 # python  
-Apress - Begining Python - From Novice to Professional
+Apress - Begining Python - From Novice to Professional   
+[A Byte of Python](https://python.swaroopch.com/basics.html)
 
 ## The Interactive Interpreter
-```Shell
-20160308 22:14:06 lshang@elemos:/home/lshang 
++ *python -V*
++ *python --help*
++ Environment Variables
+  * **PYTHONSTARTUP**
+  * **PYTHONPATH**
+  ```Shell
+# Set PYTHONSTARTUP to the name of a file executed on interactive startup (no default)
+# Similar to .profile for UNIX Shells. 
+$ export PYTHONSTARTUP=.pythonrc.py
+
+# Set module search path to directories separated by ':' and prefixed to the default ones. The result is sys.path
+$ export PYTHONPATH=~/lib:$PYTHONPATH
+
+$ cat .pythonrc.py
+#!/usr/bin/env python
+# reset the prime and secondary prompt for python in the interactive mode. 
+import sys
+sys.ps1 = 'Run Python: '
+sys.ps2 = 'Continue... '
 $ python
-Python 2.7.3 (default, Jun 22 2015, 19:33:41) 
-[GCC 4.6.3] on linux2
+Python 2.7.3 (default, Dec 18 2012, 13:50:09)
+[GCC 4.5.3] on cygwin
 Type "help", "copyright", "credits" or "license" for more information.
->>> print "Hello, world!"
-Hello, world!
->>> 
+Run Python: print \             # the first prompt changed (\ is to continue the print statement line). 
+Continue... 'Hello World'       # the secondary prompt changed. 
+Hello World
+Run Python: print sys.path[0:4]
+['', '/home/lshang/lib', '/home/lshang', '/usr/lib/python27.zip']
 ```
 
 ## Numbers and Expressions
