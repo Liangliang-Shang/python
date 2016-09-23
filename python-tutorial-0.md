@@ -164,7 +164,7 @@ Hello, world!
 10
 ```  
 + Raw Strings  
-Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. A simple way of putting the backslash at the end of a string is:    
+Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. It is very helpful when you using a Windows file system path or in a regular expression. 
 
 ```Python
 >>> print 'Hello,\nworld!'
@@ -179,8 +179,7 @@ Let\'s go!
     print r"This is illegal\"
                             ^
 SyntaxError: EOL while scanning string literal
->>> 
->>> print r"C:\Program Files" '\\'
+>>> print r"C:\Program Files" '\\'               # to avoid double back slash to escapte \
 C:\Program Files\
 >>> 
 ```
@@ -218,4 +217,75 @@ Hello, world!
 'Hello, world!'
 >>> print repr(10000L)
 10000L
+```
++ Immutable    
+Once you create a string, you cannot change it anymore. 
++ Format    
+str.format method is much more simpler and eligant than string concatenation, and  the conversion to string would be done automatically
+```python
+# format string
+print '{}, {}'.format('abc', 'xyz')                # position matters
+print '{}, {}'.format('xyz', 'abc')                # position matters
+print '{0}, {1}, {0}'.format('abc', 'xyz')         # position reusable
+```
+
+    abc, xyz
+    xyz, abc
+    abc, xyz, abc
+    
+
+
+```python
+# format string (continued)
+print '{first}, {last}'.format(last='abc', first='xyz')             # keyword parameters
+print '{first}, {last}, {first}'.format(last='abc', first='xyz')    # keyword reusable
+```
+
+    xyz, abc
+    xyz, abc, xyz
+    
+
+
+```python
+# format string (continued)
+import this
+print '{self.i}{self.c}'.format(self=this)          # class/object/module
+```
+
+    25!
+    
+
+
+```python
+# format string (continued)
+l = ('a', 'b', 'c')
+print '{0[2]}-{0[1]}-{0[0]}'.format(l)              # format a list
+d = {'a': 'x', 'b': 'y', 'c': 'z'}
+print '{0[a]},{0[b]},{0[c]}'.format(d)              # format a dict
+```
+
+    c-b-a
+    x,y,z
+    
+
+
+```python
+# format numbers/with style? 
+pi = 3.1415926
+print '{:0<9}'.format('{:.2f}'.format(pi))
+x  = 23
+print '{0:0<17} = {1:0>17}'.format(pi, pi)               # position:padding{align:^|<|>}length
+d  = 127
+print '{0:d}(d) = {0:b}b = {0:o}o = {0:x}x'.format(d)    # decimal, binary, oct, hex
+print '{0:0<17} = {0:,}'.format(pi * 1000000)            # 314,159.26
+```
+
+    3.1400000
+    3.141592600000000 = 000000003.1415926
+    127(d) = 1111111b = 177o = 7fx
+    3141592.600000000 = 3,141,592.6
+
+```Python
+>>> print('{0}{1: ^72}{0}'.format('+', 'README'))    # fill with ' ' with the text centered in 72 width
++                                 README                                 +
 ```
