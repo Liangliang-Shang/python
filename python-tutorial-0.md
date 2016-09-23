@@ -1,19 +1,19 @@
 # python  
-Apress - Begining Python - From Novice to Professional   
-[A Byte of Python](https://python.swaroopch.com/basics.html)
-
+Apress - Begining Python - From Novice to Professional    
+[A Byte of Python](https://python.swaroopch.com/basics.html)    
 ## The Interactive Interpreter
-+ *python -V*
-+ *python --help*
-+ Environment Variables
-  * **PYTHONSTARTUP**
-  * **PYTHONPATH**
++ *python -V*    
++ *python --help*    
++ Environment Variables    
+  * **PYTHONSTARTUP**    
+  * **PYTHONPATH**    
   ```Shell
 # Set PYTHONSTARTUP to the name of a file executed on interactive startup (no default)
 # Similar to .profile for UNIX Shells. 
 $ export PYTHONSTARTUP=.pythonrc.py
 
-# Set module search path to directories separated by ':' and prefixed to the default ones. The result is sys.path
+# Set module search path to directories separated by ':' and prefixed to the default ones. 
+# The result is sys.path
 $ export PYTHONPATH=~/lib:$PYTHONPATH
 
 $ cat .pythonrc.py
