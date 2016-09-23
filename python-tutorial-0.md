@@ -32,8 +32,10 @@ Hello World
 Run Python: print sys.path[0:4]
 ['', '/home/lshang/lib', '/home/lshang', '/usr/lib/python27.zip']
 ```
+## Literal Constants
+a number like 5, 1.23, or a string like 'This is a string' or "It's a string!"
 
-## Numbers and Expressions
+## Expressions
 ```Python
 >>> 1 + 9
 10
