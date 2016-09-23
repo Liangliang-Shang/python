@@ -40,7 +40,8 @@ Run Python: print sys.path[0:4]
 ## Literal Constants
 a number like 5, 1.23, or a string like 'This is a string' or "It's a string!"
 
-## Expressions
+## Operators & Expressions
++ +, -, *, /, %, **, //, <, >, <=, >=, ==, !=, not, and, or
 ```Python
 >>> 1 + 9
 10
@@ -70,8 +71,8 @@ A variable is basically a name that represents (or refers to) some value.  Varia
 + Data Type
   * number
   * string
-  * object
-    Everything is an object in Python including number, string, functions
+  * object    
+    Everything is an object in Python including number, string, functions.
 ```Python
 >>> pi = 3.14
 >>> r  = 1
