@@ -2,16 +2,16 @@
 Apress - Begining Python - From Novice to Professional    
 [A Byte of Python](https://python.swaroopch.com/basics.html)    
 ## The Interactive Interpreter
-  ```Shell
+```Shell
 $ python -V
 ```
-  ```Shell
+```Shell
 $ python --help
 ```
 + Environment Variables    
   * **PYTHONSTARTUP**    
   * **PYTHONPATH**    
-  ```Shell
+```Shell
 # Set PYTHONSTARTUP to the name of a file executed on interactive startup (no default)
 # Similar to .profile for UNIX Shells. 
 $ export PYTHONSTARTUP=.pythonrc.py
@@ -121,7 +121,7 @@ Make sure your comments say significant things and don't simply restate what is 
 
 ## Strings    
 + Single-Quoted/Double-Quoted/Triple-Quoted Strings and Escaping Quotes
-  ```Python
+```Python
 >>> 'Hello, world!'                     # Single-Quoted string
 'Hello, world!'
 >>> 'Let\'s go!'                        # Back-slash to escapte the single quote in a single-quoted string
@@ -151,7 +151,7 @@ Still here.
   * \', \", \\, \t, \n
   * \
     \ is the last character of the line in python, which means the next line continues the last line.    
-  ```Python
+```Python
 >>> print "Hello, \
 ... world!"
 Hello, world!
@@ -164,8 +164,7 @@ Hello, world!
 ```  
 + Raw Strings  
 Raw strings don't treat the backslash as a special character at all. The one thing you can't have in a raw string is a final backslash. A simple way of putting the backslash at the end of a string is:    
-    
-  ```Python
+```Python
 >>> print 'Hello,\nworld!'
 Hello,
 world!
@@ -183,8 +182,16 @@ SyntaxError: EOL while scanning string literal
 C:\Program Files\
 >>> 
 ```
+
++ Unicode Strings  
+Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world.    
+```Python
+>>> print u'你好！'
+你好！
+```
+
 + Concatenating Strings    
-  ```Python
+```Python
 >>> "Let's say " '"Hello, world!"'
 'Let\'s say "Hello, world!"'
 >>> "Hello, " + "world!"
@@ -193,7 +200,7 @@ C:\Program Files\
 
 + String Representations, str and repr  
 _str_ simply converts a value into a string in some reasonable fashion that will probably be understood by a user, and _repr_, which creates a string that is representation of the value as a legal Python expression. 
-  ```Python
+```Python
 >>> "Hello, world!"
 'Hello, world!'
 >>> 10000L
@@ -206,11 +213,4 @@ Hello, world!
 'Hello, world!'
 >>> print repr(10000L)
 10000L
-```
-+ Unicode Strings  
-Normal strings in Python are stored internally as 8-bit ASCII, while Unicode strings are stored as 16-bit Unicode. This allows for a more varied set of characters, including special characters from most languages in the world.    
-    
-  ```Python
->>> print u'你好！'
-你好！
 ```
