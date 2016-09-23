@@ -115,22 +115,38 @@ x: 0.618
 + Comments  
 Make sure your comments say significant things and don't simply restate what is already obvious from the code. 
 
-## Strings  
-+ Single-Quoted Strings and Escaping Quotes  
+## Strings    
++ Single-Quoted/Double-Quoted/Triple-Quoted Strings and Escaping Quotes
 ```Python
->>> 'Hello, world!'
+>>> 'Hello, world!'                     # Single-Quoted string
 'Hello, world!'
->>> 'Let\'s go!'
+>>> 'Let\'s go!'                        # Back-slash to escapte the single quote in a single-quoted string
 "Let's go!"
->>> "Let's go!"
+>>> "Let's go!"                         # The single quote could be used as a part of a Double-Quoted string
 "Let's go!"
->>> '"Hello, world!" she said'
+>>> '"Hello, world!" she said'          # vice-versa
 '"Hello, world!" she said'
 >>> '"Hello, world!" she said'
 '"Hello, world!" she said'
+
+# Triple-Quoted string for muliple-line strings, single/double quotes are freely used. 
+>>> print '''This is a very long string. 
+... It continues here. 
+... And it's not over yet. 
+... "Hello, world!"
+... Still here.'''
+This is a very long string. 
+It continues here. 
+And it's not over yet. 
+"Hello, world!"
+Still here.
+>>> 
 ```
 
-+ Concatenating Strings  
++ Escaping Sequences    
+  * \', \", \\, \t, \n
+
++ Concatenating Strings    
 ```Python
 >>> "Let's say " '"Hello, world!"'
 'Let\'s say "Hello, world!"'
@@ -157,17 +173,6 @@ Hello, world!
 
 + Long Strings, Raw Strings, and Unicode
 ```Python
->>> print '''This is a very long string. 
-... It continues here. 
-... And it's not over yet. 
-... "Hello, world!"
-... Still here.'''
-This is a very long string. 
-It continues here. 
-And it's not over yet. 
-"Hello, world!"
-Still here.
->>> 
 ```
 ```Python
 >>> print "Hello, \
