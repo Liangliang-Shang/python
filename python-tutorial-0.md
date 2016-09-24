@@ -84,6 +84,28 @@ The difference between a statement and an expression: an expression is something
 >>> print 2 * pi * r          # statement, print out the evaluation
 6.28
 ```
++ if/elif/else    
++ while 
+```Python
+>>> name = ''
+>>> while not name:
+...     name = raw_input("What's your name? ")
+...     if name:
+...         print 'Hello, ' + name
+...     else:
+...         print 'Hello? '
+...
+What's your name?
+Hello?
+What's your name? John Smith
+Hello, John Smith
+```
++ for ... in    
+Iterate over a sequence of objects. 
++ continue    
+Skip the rest statements of the current loop block and continue to the next iteration of the loop    
++ break    
+Break out/stop execution of a loop statment    
 
 ## Getting Input from the User  
 _input_ assumes that what you enter is a valid Python expression. 
