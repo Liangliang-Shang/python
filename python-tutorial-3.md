@@ -233,3 +233,21 @@ None
 >>> d
 {'y': 2, 'x': 21, 'z': 3}
 ```
+
+## Set
+Unordered collections of simple objects.
+```Python
+>>> bric = set(['Brazil', 'Russia', 'India', 'China'])
+>>> bric
+set(['Brazil', 'China', 'India', 'Russia'])
+>>> 'China' in bric
+True
+>>> 'USA' in bric
+False
+>>> bri = bric.copy()
+>>> bri.remove('China')
+>>> bric.issuperset(bri)
+True
+>>> bri & bric
+set(['Brazil', 'India', 'Russia'])
+```
