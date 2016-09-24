@@ -21,9 +21,17 @@
 >>> phonebook['Cecil']
 '3258'
 ```
+**Zip two lists to make a dict**
+```Python
+>>> keys = ('a', 'b', 'c')
+>>> vals = (1, 2, 3)
+>>> d    = dict(zip(keys, vals))
+>>> d
+{'a': 1, 'c': 3, 'b': 2}
+```
 
 + The dict Function  
-> The dict function isn't really a function at all. It is a type, just like list, tuple, and str.  
+  The dict function isn't really a function at all. It is a type, just like list, tuple, and str.  
 ```Python
 >>> items = [('name', 'Gumby'), ('age', 42)]          # sequences of (key, value) pairs
 >>> d = dict(items)
@@ -171,9 +179,9 @@ None
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'name'
->>> print d.get('name')   # no exceiption when using get to access a nonexistent key
+>>> print d.get('name')               # No exception using get function!!!
 None
->>> d.get('name', 'N/A')
+>>> d.get('name', 'N/A')              # Return the default value. 
 'N/A'
 >>> d['name'] = 'Eric'
 >>> d.get('name')
@@ -210,22 +218,20 @@ True
 ('y', 2)
 ```
 ```Python
->>> d = {}
->>> d.setdefault('name', 'N/A')   # sets the value corresponding to the given key if it is not already in the dictionary
-'N/A'
->>> d
-{'name': 'N/A'}
->>> d['name'] = 'Lynn'
->>> d.setdefault('name', 'N/A')
-'Lynn'
->>> d
-{'name': 'Lynn'}
->>> d = {}
->>> print d.setdefault('name')    # The default is optional; if it is left out, None is used
-None
->>> d
-{'name': None}
+>>> language = {}
+>>> language.setdefault('names')    # The default is optional; if it is left out, None is used
+>>> language
+{'names': None}
+>>> language = {}
+# Set the value corresponding to the given key if it is not already in the dictionary
+>>> language.setdefault('names', []).append('Python')   
+>>> language
+{'names': ['Python']}
+>>> language.setdefault('names', []).append('Perl')
+>>> language
+{'names': ['Python', 'Perl']}
 ```
+
 ```Python
 >>> d = {'x': 1, 'y': 2, 'z': 3}
 >>> x = {'x': 21}
