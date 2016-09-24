@@ -330,3 +330,9 @@ TypeError: sequence item 0: expected string, int found
 >>> maketrans('', '')[97:123]
 'abcdefghijklmnopqrstuvwxyz'
 ```
++ Tricks
+```Python
+>>> s1, s2 = 'abc', 'aba'
+>>> s1 == s1[::-1], s2 == s2[::-1]
+(False, True)
+```
