@@ -3,11 +3,13 @@ Abstraction and Structure
 ## Function    
 Give a name to a block statements (*define a function*) and allow you to run that block using the specified name anywhere and any times(*call the function*). Build-in functions: *len*/*range*
 + *def*    
+  Start the definition of a function
 + Identifier Name    
+  Name a function
 + a pair of parentheses    
-May enclose some names of variables (*parameters*)    
+  Enclose some names of variables (*parameters*)    
 + the final colon    
-End the line of defining the function.
+  End the line of defining the function.
 + Indented block of statements
   * *pass*    
     Indicate an empty block of statements.     
@@ -33,6 +35,7 @@ sayHelloWorld()
 ... 
 >>> square.__doc__        # __doc__ is a function attribute. 
 'Calculates the square of the number x.'
+# Press the q key to exit *help*
 >>> help(square)
 Help on function square in module __main__:
 
