@@ -89,12 +89,12 @@ The difference between a statement and an expression: an expression is something
 ```Python
 >>> name = ''
 >>> while not name:
+...     print 'Hello?'
 ...     name = raw_input("What's your name? ")
-...     if name:
-...         print 'Hello, ' + name
-...     else:
-...         print 'Hello? '
+... else:
+...     print 'Hello, ' + name
 ...
+Hello?
 What's your name?
 Hello?
 What's your name? John Smith
