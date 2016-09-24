@@ -104,6 +104,12 @@ The difference between a statement and an expression: an expression is something
 6.28
 >>> print 2 * pi * r          # statement, print out the evaluation
 6.28
+>>> a, b = 45, 54             # multiple assignments in a single line
+>>> a, b
+(45, 54)
+>>> a, b = b, a               # swap!!!
+>>> a, b
+(54, 45)
 ```
 + if/elif/else    
 + while 
