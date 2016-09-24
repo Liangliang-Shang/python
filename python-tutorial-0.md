@@ -1,7 +1,8 @@
 # python  
 Apress - Begining Python - From Novice to Professional    
 [A Byte of Python](https://python.swaroopch.com/basics.html)    
-[Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
+[Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)    
+[pym py2](http://pymbook.readthedocs.io/en/py2/variablesanddatatypes.html)
 ## The Interactive Interpreter
 ```Shell
 $ python -V
@@ -69,6 +70,25 @@ a number like 5, 1.23, or a string like 'This is a string' or "It's a string!"
 
 ## Variables  
 A variable is basically a name that represents (or refers to) some value.  Variable names can consist of letters, digits and underscore characters(_). A variable can't begin with a digit. 
++ Identifiers(Names)
+```
+identifier ::= (letter|"_") (letter | digit | "_")*
+letter ::= lowercase | uppercase
+lowercase ::= "a"..."z"
+uppercase ::= "A"..."Z"
+digit ::= "0"..."9"
+``` 
++ Keyword
+```
+and       del      from      not   while
+as        elif     global    or    with
+assert    else     if        pass  yield
+break     except   import    print
+class     exec     in        raise
+continue  finally  is        return
+def       for      lambda    try
+``` 
+
 + Data Type
   * number
   * string
