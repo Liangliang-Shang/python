@@ -1,6 +1,7 @@
 # python  
 Apress - Begining Python - From Novice to Professional    
 [A Byte of Python](https://python.swaroopch.com/basics.html)    
+[Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
 ## The Interactive Interpreter
 ```Shell
 $ python -V
