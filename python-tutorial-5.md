@@ -1,6 +1,31 @@
 Abstraction  
 Abstraction and Structure  
-## Function and docstring  
+## Function    
+Give a name to a block statements (*define a function*) and allow you to run that block using the specified name anywhere and any times(*call the function*). Build-in functions: *len*/*range*
++ *def*    
++ Identifier Name    
++ a pair of parentheses    
+May enclose some names of variables (*parameters*)    
++ the final colon    
+End the line of defining the function.
++ Indented block of statements
+  * *pass*    
+    Indicate an empty block of statements.     
+  * *return*    
+    Return from the function/Break out of the function.  Every function implicitly contains a *return None* statement at the end unless you have written your own return statement.
+```Python
+# Identifier Name: sayHelloWorld
+# No parameters 
+def sayHelloWorld():
+    # Block belonging to the function
+	print "Hello World!"             # Indented block of statements
+# End of the function
+
+sayHelloWorld()
+sayHelloWorld()
+```
+
+### DocStrings    
 ```Python
 >>> def square(x):
 ...     'Calculates the square of the number x.'
@@ -16,7 +41,11 @@ square(x)
 (END)
 ```
 
-## The Magic of Parameters 
+### Function Parameters    
+Parameters are specified within the pair of parentheses in the function definition, separated by commas.    
++ Local variables
+Inside a function definition, variable names are local to the function. They are not related in any way to other variables with the same names used outside the function.     
++ global
 ```Python
 >>> def try_to_change(n):
 ...     n = 'Mr. Gumby'
@@ -38,7 +67,8 @@ False
 >>> n == names                   # they are equal
 True
 ```
-+ Keyword Parameters and Defaults  
++ Keyword Parameters and Defaults    
+Only those parameters which are at the end of the parameter list can be given default argument values.
 ```Python
 >>> def hello(greeting='Hello', name='world'):
 ...     print '%s, %s!' % (greeting, name)
@@ -119,6 +149,7 @@ Params:
 a A
 b B
 ```
+
 ## Scoping
 ```Python
 >>> x = 1
