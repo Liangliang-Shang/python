@@ -285,21 +285,21 @@ x = [4, 6, 2, 1, 7, 9]
 
 ## Tuples: Immutable Sequences
 ```Python
->>> 1, 2, 3
+>>> 1, 2, 3                  # a tuple
 (1, 2, 3)
->>> (1, 2, 3)
+>>> (1, 2, 3)                # a tuple 
 (1, 2, 3)
->>> ()
+>>> ()                       # an empty tuple
 ()
->>> 42
+>>> 42                       # just an integer
 42
->>> 42, 
+>>> 42,                      # a tuple with one element
 (42,)
->>> (42,)
+>>> (42,)                    # a tuple with one element
 (42,)
->>> 3 * (42)
+>>> 3 * (42)                 # equal to 3 * 42
 126
->>> 3 * (42, )
+>>> 3 * (42, )               # elements repeats three times in a tuple
 (42, 42, 42)
 ```
 **The comma is crucial for a tuple. Simply adding parentheses won't help: (42) is exactly the same as 42.**
