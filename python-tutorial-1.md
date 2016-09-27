@@ -118,6 +118,24 @@ Create a list from a string
 >>> list('Hello')
 ['H', 'e', 'l', 'l', 'o']
 ```
+
+## Copy of a list
+```Python
+>>> x = [4, 6, 2, 1, 7, 9]
+
+>>> y = x                          # x/y are binding to the same object. 
+>>> y is x
+True
+>>> id(x), id(y)
+(4292289772L, 4292289772L)
+
+>>> y = x[:]                       # two different objects, the one y binds copy the value of x
+>>> y is x
+False
+>>> id(x), id(y)
+(4292289772L, 4292730412L)
+```
+
 + Basic List Operations  
   + Changing Lists: Item Assignments  
   + Deleting Elements  
@@ -159,7 +177,7 @@ IndexError: list assignment index out of range
 >>> numbers
 [1, 2]
 ```
-+ List Methods
+### List Methods
   + append
   + count
   + extend
@@ -170,9 +188,6 @@ IndexError: list assignment index out of range
   + reverse
   + sort
 ```Python
->>> lst = [1, 2, 3]
->>> lst.append(4)
->>> lst
 [1, 2, 3, 4]
 >>> ['to', 'be', 'or', 'not', 'to', 'be'].count('to')
 2
@@ -181,23 +196,6 @@ IndexError: list assignment index out of range
 2
 >>> x.count([1, 2])
 1
-```
-Check out the difference betwen extending a list and concatenating it. 
-```Python
->>> a = [1, 2, 3]
->>> b = [4, 5, 6]
->>> a.extend(b)
->>> a
-[1, 2, 3, 4, 5, 6]
->>> a = [1, 2, 3]
->>> b = [4, 5, 6]
->>> a + b
-[1, 2, 3, 4, 5, 6]
->>> a
-[1, 2, 3]
->>> a[len(a):] = b
->>> a
-[1, 2, 3, 4, 5, 6]
 ```
 ```Python
 >>> a
@@ -208,61 +206,42 @@ Check out the difference betwen extending a list and concatenating it.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: 0 is not in list
->>> numbers = [1, 2, 3, 5, 6, 7]
->>> numbers.insert(3, 'four')
+```
+** Change the list **
+```Python
+>>> numbers = range(1, 9)
 >>> numbers
-[1, 2, 3, 'four', 5, 6, 7]
->>> numbers = [1, 2, 3, 5, 6, 7]
->>> numbers[3:3] = ['four']
+[1, 2, 3, 4, 5, 6, 7, 8]
+>>> numbers.insert(0, 0)                 # insert 0 into the list numbers at the index 0
+>>> numbers                              # equal to numbers[0:0] = (0, ), what if numbers[0:0] = 'Zero'/('Zero', )???
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+>>> numbers.append(0)                    # append 0 to the tail of the list
+>>> numbers                              # numbers[len(numbers):len(numbers)] = 0,
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 0]
+>>> numbers.remove(0)                    # remove the first concurrency 0
 >>> numbers
-[1, 2, 3, 'four', 5, 6, 7]
+[1, 2, 3, 4, 5, 6, 7, 8, 0]
+>>> numbers.pop(4)                       # pop out the element at the index 4, and return the value 5
+5
 >>> numbers
-[1, 2, 3, 'four', 5, 6, 7]
->>> numbers.pop()
-7
+[1, 2, 3, 4, 6, 7, 8, 0]
+>>> numbers.reverse()                    # reverse the list. how about list(reversed(numbers))???
 >>> numbers
-[1, 2, 3, 'four', 5, 6]
->>> numbers.pop(0)
-1
+[0, 8, 7, 6, 4, 3, 2, 1]
+>>> numbers.extend([5, 9])               # extend the list with another list, its elements would append to the list. numbers + [5, 9]???
+>>> numbers                              # equal to numbers[len(numbers):] = [5, 9]!!!
+[0, 8, 7, 6, 4, 3, 2, 1, 5, 9]
+>>> numbers.sort()                       # sort the list. sort(reverse=True)!!! how about sorted(numbers)???
 >>> numbers
-[2, 3, 'four', 5, 6]
->>> numbers.remove('four')
->>> numbers
-[2, 3, 5, 6]
->>> numbers.remove(0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-ValueError: list.remove(x): x not in list
->>> numbers
-[2, 3, 5, 6]
->>> numbers.reverse()
->>> numbers
-[6, 5, 3, 2]
->>> x = [1, 2, 3]
->>> list(reversed(x))
-[3, 2, 1]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> x = ['a', 'another', 'about', 'an']  # sort by the key specified by the argument key
+>>> x.sort(key=len)
 >>> x
-[1, 2, 3]
+['a', 'an', 'about', 'another']
 >>> x = [4, 6, 2, 1, 7, 9]
->>> x.sort()
->>> x
-[1, 2, 4, 6, 7, 9]
->>> x = [4, 6, 2, 1, 7, 9]
->>> y = x[:]
->>> y.sort()
->>> x
-[4, 6, 2, 1, 7, 9]
->>> y
-[1, 2, 4, 6, 7, 9]
->>> x
-[4, 6, 2, 1, 7, 9]
->>> y = x
->>> y.sort()
->>> x
-[1, 2, 4, 6, 7, 9]
->>> y
-[1, 2, 4, 6, 7, 9]
-x = [4, 6, 2, 1, 7, 9]
+```
+More about sort. 
+```Python
 >>> cmp(42, 32)
 1
 >>> cmp(99, 100)
@@ -273,14 +252,6 @@ x = [4, 6, 2, 1, 7, 9]
 >>> numbers.sort(cmp)
 >>> numbers
 [2, 5, 7, 9]
->>> x = ['a', 'another', 'about', 'an']
->>> x.sort(key=len)
->>> x
-['a', 'an', 'about', 'another']
->>> x = [4, 6, 2, 1, 7, 9]
->>> x.sort(reverse=True)
->>> x
-[9, 7, 6, 4, 2, 1]
 ```
 
 ### Simulate Stack/Queue
