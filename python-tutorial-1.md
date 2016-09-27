@@ -229,8 +229,8 @@ ValueError: 0 is not in list
 >>> numbers.reverse()                    # reverse the list. how about list(reversed(numbers))???
 >>> numbers
 [0, 8, 7, 6, 4, 3, 2, 1]
->>> numbers.extend([5, 9])               # extend the list with another list, its elements would append to the list. 
->>> numbers                              # equal to numbers[len(numbers):] = [5, 9]!!! how about numbers + [5, 9]???
+>>> numbers.extend([5, 9])               # extend the list with another list, its elements would append to the list.
+>>> numbers                              # numbers[len(numbers):] = [5, 9]!!! how about numbers + [5, 9]???
 [0, 8, 7, 6, 4, 3, 2, 1, 5, 9]
 >>> numbers.sort()                       # sort the list. sort(reverse=True)!!! how about sorted(numbers)???
 >>> numbers
