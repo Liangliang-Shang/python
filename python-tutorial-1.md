@@ -214,7 +214,7 @@ ValueError: 0 is not in list
 >>> numbers
 [1, 2, 3, 4, 5, 6, 7, 8]
 >>> numbers.insert(0, 0)                 # insert 0 into the list numbers at the index 0
->>> numbers                              # equal to numbers[0:0] = (0, ), what if numbers[0:0] = 'Zero'/('Zero', )???
+>>> numbers                              # numbers[0:0] = (0, ), what if numbers[0:0] = 'Zero'/('Zero', )???
 [0, 1, 2, 3, 4, 5, 6, 7, 8]
 >>> numbers.append(0)                    # append 0 to the tail of the list
 >>> numbers                              # numbers[len(numbers):len(numbers)] = 0,
