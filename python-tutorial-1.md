@@ -187,26 +187,20 @@ IndexError: list assignment index out of range
   + remove
   + reverse
   + sort
+**Count/Index**
 ```Python
-[1, 2, 3, 4]
->>> ['to', 'be', 'or', 'not', 'to', 'be'].count('to')
+>>> q = ['to', 'be', 'or', 'not', 'to', 'be']
+>>> q.count('to')
 2
->>> x = [[1, 2], 1, 1, [2, 1, [1, 2]]]
->>> x.count(1)
-2
->>> x.count([1, 2])
-1
-```
-```Python
->>> a
-[1, 2, 3, 4, 5, 6]
->>> a.index(3)
-2
->>> a.index(0)
+>>> q.count('is')        # No 'is' in the list
+0
+>>> q.index('not')       # return the index
+3
+>>> q.index('is')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-ValueError: 0 is not in list
-```    
+ValueError: 'is' is not in list
+```
 
 **Change the list**    
 ```Python
