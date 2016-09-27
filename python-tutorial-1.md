@@ -186,7 +186,7 @@ IndexError: list assignment index out of range
   + pop
   + remove
   + reverse
-  + sort
+  + sort    
 **Count/Index**
 ```Python
 >>> q = ['to', 'be', 'or', 'not', 'to', 'be']
