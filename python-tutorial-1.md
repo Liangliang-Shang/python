@@ -283,6 +283,32 @@ x = [4, 6, 2, 1, 7, 9]
 [9, 7, 6, 4, 2, 1]
 ```
 
+### Simulate Stack/Queue
++ Use *list.pop()*/*list.append()* to simulate Stack, LIFO(Last In First Out)
++ Use *list.pop(0)*/*list.append()* to simulate Queue, FIFO(First In First Out)
+```Python
+>>> a = range(0, 5)
+>>> a.pop()                 # pop out the last member, 4
+4
+>>> a.pop()                 # pop out the last member, now it is 3
+3
+>>> a
+[0, 1, 2]
+>>> a.append(3)             # append 3 to the list tail
+>>> a
+[0, 1, 2, 3]
+```
+```Python
+>>> a = range(5)
+>>> a.append(1)             # into the queue
+>>> a.pop(0)                # out of the queue
+0
+>>> a.pop(0)                # out of the queue
+1
+>>> a
+[2, 3, 4, 1]
+```
+
 ## Tuples: Immutable Sequences
 ```Python
 >>> 1, 2, 3                  # a tuple
