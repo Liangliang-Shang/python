@@ -315,4 +315,13 @@ x = [4, 6, 2, 1, 7, 9]
 ('a', 'b', 'c')
 >>> tuple((1, 2, 3))
 (1, 2, 3)
+>>> a = (1, 2, 3, 4)
+>>> del a[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object doesn't support item deletion
+>>> x, y = divmod(15, 2)          # divmod return a tuple (quotient, remainder), and unpack it with x, y
+>>> x, y
+(7, 1)
 ```
+**Tuples are immutable, that means you can not del/add/edit any value inside the tuple.**
