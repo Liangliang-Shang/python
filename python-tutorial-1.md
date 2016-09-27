@@ -206,8 +206,9 @@ IndexError: list assignment index out of range
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: 0 is not in list
-```
-** Change the list **
+```    
+
+**Change the list**    
 ```Python
 >>> numbers = range(1, 9)
 >>> numbers
@@ -228,8 +229,8 @@ ValueError: 0 is not in list
 >>> numbers.reverse()                    # reverse the list. how about list(reversed(numbers))???
 >>> numbers
 [0, 8, 7, 6, 4, 3, 2, 1]
->>> numbers.extend([5, 9])               # extend the list with another list, its elements would append to the list. numbers + [5, 9]???
->>> numbers                              # equal to numbers[len(numbers):] = [5, 9]!!!
+>>> numbers.extend([5, 9])               # extend the list with another list, its elements would append to the list. 
+>>> numbers                              # equal to numbers[len(numbers):] = [5, 9]!!! how about numbers + [5, 9]???
 [0, 8, 7, 6, 4, 3, 2, 1, 5, 9]
 >>> numbers.sort()                       # sort the list. sort(reverse=True)!!! how about sorted(numbers)???
 >>> numbers
