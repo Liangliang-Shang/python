@@ -137,7 +137,7 @@ False
 ```
 
 ### Basic List Operations  
-  + Changing Lists: Item Assignments  
+  + Item Assignments  
   + Deleting Elements  
   + Assigning to Slices  
     Replace/Extend/Insert/Delete...
@@ -146,7 +146,7 @@ False
 >>> x[1] = 2
 >>> x
 [1, 2, 1]
->>> x[9] = 10
+>>> x[9] = 10                    # None to initialize the list, then assign value to it. x = [None] * 10???
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: list assignment index out of range
@@ -157,7 +157,6 @@ IndexError: list assignment index out of range
 >>> del x[0]
 >>> x
 [2, 1]
->>>
 ```
 ```Python
 >>> name = list('Perl')
@@ -170,10 +169,10 @@ IndexError: list assignment index out of range
 >>> name
 ['P', 'y', 't', 'h', 'o', 'n']
 >>> numbers = [1, 5]
->>> numbers[1:1] = [2, 3, 4]
+>>> numbers[1:1] = [2, 3, 4]                    # worked as insert
 >>> numbers
 [1, 2, 3, 4, 5]
->>> numbers[2:] = []
+>>> numbers[2:] = []                            # worked as delete, del numbers[1:4]
 >>> numbers
 [1, 2]
 ```
