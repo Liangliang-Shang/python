@@ -115,7 +115,7 @@ True
 + The list Function
 Create a list from a string
 ```Python
->>> list('Hello')
+>>> list('Hello')                 # ''.join(['H', 'e', 'l', 'l', 'o']) 
 ['H', 'e', 'l', 'l', 'o']
 ```
 
@@ -136,7 +136,7 @@ False
 (4292289772L, 4292730412L)
 ```
 
-+ Basic List Operations  
+### Basic List Operations  
   + Changing Lists: Item Assignments  
   + Deleting Elements  
   + Assigning to Slices  
@@ -224,7 +224,7 @@ ValueError: 'is' is not in list
 >>> numbers.reverse()                    # reverse the list. how about list(reversed(numbers))???
 >>> numbers
 [0, 8, 7, 6, 4, 3, 2, 1]
->>> numbers.extend([5, 9])               # extend the list with another, its elements would append to the list.
+>>> numbers.extend([5, 9])               # extend numbers with [5, 9]; 5, 9 would append to numbers.
 >>> numbers                              # numbers[len(numbers):] = [5, 9]!!! how about numbers + [5, 9]???
 [0, 8, 7, 6, 4, 3, 2, 1, 5, 9]
 >>> numbers.sort()                       # sort the list. sort(reverse=True)!!! how about sorted(numbers)???
