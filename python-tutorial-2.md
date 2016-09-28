@@ -80,16 +80,7 @@ Normal strings in Python are stored internally as 8-bit ASCII, while Unicode str
 >>> print u'你好！'
 你好！
 ```
-
-+ Concatenating Strings    
-
-```Python
->>> "Let's say " '"Hello, world!"'
-'Let\'s say "Hello, world!"'
->>> "Hello, " + "world!"
-'Hello, world!'
-```
-+ String Representations, str and repr    
+### String Representations, str and repr    
 _str_ simply converts a value into a string in some reasonable fashion that will probably be understood by a user, and _repr_, which creates a string that is representation of the value as a legal Python expression.    
 
 ```Python
@@ -107,15 +98,16 @@ Hello, world!
 10000L
 ```
 
+### Concatenate Strings    
 
+```Python
+>>> "Let's say " '"Hello, world!"'
+'Let\'s say "Hello, world!"'
+>>> "Hello, " + "world!"
+'Hello, world!'
+```
 
-
-
-
-
-
-
-+ Format    
+### Format    
 str.format method is much more simpler and eligant than string concatenation, and  the conversion to string would be done automatically
 ```python
 # format string
