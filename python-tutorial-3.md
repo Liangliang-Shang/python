@@ -243,6 +243,8 @@ True
 ## Set
 Unordered collections of simple objects.
 ```Python
+>>> set('banana')                                          # unique the characters in 'banana'
+set(['a', 'b', 'n'])
 >>> bric = set(['Brazil', 'Russia', 'India', 'China'])
 >>> bric
 set(['Brazil', 'China', 'India', 'Russia'])
@@ -254,6 +256,15 @@ False
 >>> bri.remove('China')
 >>> bric.issuperset(bri)
 True
->>> bri & bric
+>>> bric - bri                                             # element in bric but not in bri
+set(['China'])
+>>> bri & bric                                             # element in both bric and bri
 set(['Brazil', 'India', 'Russia'])
+>>> bric | bri                                             # element in either bric or bri
+set(['Brazil', 'China', 'India', 'Russia'])
+>>> bric ^ bri                                             # element in bric or bri but not both
+set(['China'])
+>>> bri.add('China')
+>>> bri
+set(['Brazil', 'India', 'China', 'Russia'])
 ```
