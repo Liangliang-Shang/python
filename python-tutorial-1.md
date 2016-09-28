@@ -12,6 +12,7 @@ A sequence is a data structure in which the elements are numbered (starting with
 >>> database
 [['Edward Gumby', 42], ['John Smith', 50]]
 ```
+### Common Sequence Operations
 + Indexing  
 All elements in a sequence are numbered - from zero and upwards.  
 _A string is just a sequence of characters._  
@@ -20,7 +21,7 @@ When you use a negative index, Python counts from the right, that is, from the l
 >>> greeting = 'Hello'
 >>> greeting[0]
 'H'
->>> greeting[-1]
+>>> greeting[-1]                               # a negative index, counting from the right, the last element.
 'o'
 >>> 'Hello'[1]
 'e'
@@ -30,28 +31,28 @@ Year: 2016
 '1'
 ```
 + Slicing  
-Slicing to access ranges of elements
+Slicing to access ranges of elements by using two indices, separated by a colon.
 ```Python
 >>> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
->>> numbers[3:6]
+>>> numbers[3:6]                              # the first is inclusive, and the second is exclusive
 [4, 5, 6]
 >>> numbers[7:20]
 [8, 9, 0]
->>> numbers[-3:-1]
+>>> numbers[-3:-1]                            # counting from the right, excluding the last one
 [8, 9]
->>> numbers[-3:0]
+>>> numbers[-3:0]                             # return an empty list
 []
->>> numbers[-3:]
+>>> numbers[-3:]                              # the last three elements
 [8, 9, 0]
->>> numbers[:3]
+>>> numbers[:3]                               # the first three elements
 [1, 2, 3]
->>> numbers[:]
+>>> numbers[:]                                # copy the entire sequence
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
->>> numbers[0:10:2]
+>>> numbers[0:10:2]                           # step = 2
 [1, 3, 5, 7, 9]
->>> numbers[::4]
+>>> numbers[::4]                              # step = 4
 [1, 5, 9]
->>> numbers[10:0:-2]
+>>> numbers[10:0:-2]                          # counting from the right, step = 2
 [0, 8, 6, 4, 2]
 >>> numbers[5::-2]
 [6, 4, 2]
@@ -60,6 +61,7 @@ Slicing to access ranges of elements
 >>>
 ```
 + Adding Sequences
+** In general, you can only concatenate two sequences of the same kind. **
 ```Python
 >>> [1, 2, 3] + [4, 5, 6]
 [1, 2, 3, 4, 5, 6]
@@ -82,7 +84,7 @@ Multiplying a sequence by a number x creates a new sequence where the original s
 + None, Empty Lists, and Initialization
 ```Python
 >>> emptyList = []
->>> sequence = [None] * 10
+>>> sequence = [None] * 10                     # init a list of length 10, with None, meaning "nothing here"
 >>> emptyList
 []
 >>> sequence
