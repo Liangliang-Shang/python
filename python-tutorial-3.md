@@ -8,8 +8,9 @@
 >>> numbers[names.index('Cecil')]
 '3158'
 ```
+Dictionary: unordered set of key: value pairs where keys are unique. 
 
-+ Dictionary Syntax  
+### Dictionary Syntax  
 > Dictionaries consist of pairs (called items) of keys and their corresponding values.  
 > Each key is separated from its value by a colon (:)  
 > the items are separated by commas  
@@ -18,55 +19,51 @@
 
 ```Python
 >>> phonebook = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
->>> phonebook['Cecil']
+>>> phonebook['Cecil']                                   # Access to/Retrieve the value from a dict with its key
 '3258'
-```
-**Zip two lists to make a dict**
-```Python
->>> keys = ('a', 'b', 'c')
->>> vals = (1, 2, 3)
->>> d    = dict(zip(keys, vals))
->>> d
-{'a': 1, 'c': 3, 'b': 2}
+>>> phonebook['Dina'] = '7625'                           # Simplely add one more key/value pair into a dict
+>>> phonebook
+{'Beth': '9102', 'Alice': '2341', 'Dina': '7625', 'Cecil': '3258'}
+>>> del phonebook['Beth']
+>>> phonebook
+{'Alice': '2341', 'Dina': '7625', 'Cecil': '3258'}
 ```
 
 + The dict Function  
   The dict function isn't really a function at all. It is a type, just like list, tuple, and str.  
 ```Python
->>> items = [('name', 'Gumby'), ('age', 42)]          # sequences of (key, value) pairs
+>>> keys = ('a', 'b', 'c')
+>>> vals = (1, 2, 3)
+>>> d    = dict(zip(keys, vals))                      # Zip two lists to make a dict
+>>> d
+{'a': 1, 'c': 3, 'b': 2}
+>>> items = [('name', 'Gumby'), ('age', 42)]          # lists of tuples: (key, value) pairs
 >>> d = dict(items)
 >>> d
 {'age': 42, 'name': 'Gumby'}
->>> d['name']
-'Gumby'
->>> d = dict(name='Gumby', age=42)                    # using keyword arguments
+>>> d = dict(name='Gumby', age=42)                    # use keyword arguments
 >>> d
 {'age': 42, 'name': 'Gumby'}
 ```
 
-+ Basice Dictionary Operations  
+### Basice Dictionary Operations  
 
 ```Python
 >>> d
 {'age': 42, 'name': 'Gumby'}
 >>> len(d)
 2
->>> d['name']
-'Gumby'
 >>> 'name' in d
 True
->>> del d['name']
->>> d
-{'age': 42}
 ```
 
 ```Python
 >>> x = []
->>> x[6] = 'Foobar'
+>>> x[6] = 'Foobar'                            # x is a empty list, index 6 is out of range.
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: list assignment index out of range
->>> x = [None] * 7
+>>> x = [None] * 7                             # x is a list with length：7 and with None as placeholder
 >>> x[6] = 'Foobar'
 >>> x
 [None, None, None, None, None, None, 'Foobar']
@@ -76,7 +73,7 @@ IndexError: list assignment index out of range
 {42: 'Foobar'}
 ```
 
-+ String Formatting with Dictionaries  
+### String Formatting with Dictionaries  
 ```Python
 >>> phonebook
 {'Beth': '9102', 'Alice': '2341', 'Cecil': '3258'}
@@ -100,7 +97,7 @@ IndexError: list assignment index out of range
 </html>
 ```
 
-+ Dictionary Methods
+### Dictionary Methods
   + clear
   + copy
   + fromkeys
@@ -267,4 +264,41 @@ set(['China'])
 >>> bri.add('China')
 >>> bri
 set(['Brazil', 'India', 'China', 'Russia'])
+```
+## Iteration
++ Iterate over a sequence(list/string/tuple)
+```Python
+>>> for index, value in enumerate(['a', 'b', 'c']):
+...     print index, value
+...
+0 a
+1 b
+2 c
+```
++ Iterate over two sequences at the same time
+```Python
+>>> str1 = 'abc'
+>>> str2 = 'xyz'
+>>> for s1, s2 in zip(str1, str2):
+...     print s1, s2
+...
+a x
+b y
+c z
+```
++ Iterater over a dict: 
+```Python
+>>> d = {'a': 'x', 'c': 'z', 'b': 'y'}
+>>> for key, val in d.items():
+...     print key, val
+...
+a x
+c z
+b y
+>>> for key, val in d.iteritems():
+...     print key, val
+...
+a x
+c z
+b y
 ```
