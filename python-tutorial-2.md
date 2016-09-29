@@ -251,7 +251,7 @@ Pi with three decimals: 3.142
   -10
 ```
 
-+ String Methods  
+### String Methods  
   + string.digits
   + string.letters
   + string.lowercase
@@ -279,22 +279,34 @@ Pi with three decimals: 3.142
 '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 >>> string.uppercase
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
->>> title = "Monty Python's Flying Circus"
->>> title.find('Monty')
-0
->>> title.find('Python')
-6
->>> title.find('Zirquss')
+```
+** Find a sub-string
+```Python
+>>> zen = 'Now is better than never.\n'
+>>> zen.find('er')                         # find 'er' from 0
+11
+>>> zen.find('er', zen.find('er')+1)       # find 'er' after the first 'er', actually find the second 'er'
+22
+>>> zen.find('er', 0, 9)                   # find 'er' between 0 and 9
 -1
->>> subject = '$$$ Get rich now!!! $$$'
->>> subject.find('$$$')
-0
->>> subject.find('$$$', 1)
-20
->>> subject.find('!!!')
-16
->>> subject.find('!!!', 0, 16)
+>>> zen.find('is', 0, 9)
+4
+>>> zen.find('wisdom')                     # cannot find the sub-string, return -1
 -1
+>>> zen.rfind('er')                        # find 'er' starting from the right side, return its index
+22
+>>> zen.index('wisdom')                    # str.index method throws ValueError, except that, no different from find?
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: substring not found
+>>> zen.count('n')
+2
+>>> zen.startswith('Now')
+True
+>>> zen.endswith('never')
+False
+```
+```
 >>> seq = [1, 2, 3, 4, 5]
 >>> sep = '+'
 >>> sep.join(seq)
@@ -309,8 +321,19 @@ TypeError: sequence item 0: expected string, int found
 'let us go'
 >>> '1+2+3+4+5'.split('+')
 ['1', '2', '3', '4', '5']
+```
+** Strip characters from a string **
+```Python
 >>> '*** SPAM * for * everyone!!! ***'.strip(' *!')
 'SPAM * for * everyone'
+>>> '*** SPAM * for * everyone!!! ***'.lstrip('*')
+' SPAM * for * everyone!!! ***'
+>>> '*** SPAM * for * everyone!!! ***'.rstrip('*')
+'*** SPAM * for * everyone!!! '
+>>> '*** SPAM * for * everyone!!! ***'.lstrip('*').strip()      # strip() default strip leading/trailing white spaces 
+'SPAM * for * everyone!!! ***'
+```
+```
 >>> from string import maketrans
 >>> table = maketrans(string.lowercase, string.uppercase)
 >>> 'abc'.translate(table)
