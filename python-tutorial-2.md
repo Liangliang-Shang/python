@@ -280,7 +280,7 @@ Pi with three decimals: 3.142
 >>> string.uppercase
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 ```
-** Find a sub-string
+** Find a sub-string **
 ```Python
 >>> zen = 'Now is better than never.\n'
 >>> zen.find('er')                         # find 'er' from 0
@@ -306,7 +306,12 @@ True
 >>> zen.endswith('never')
 False
 ```
+** Join/Split
 ```
+>>> '+'.join(string.digits)
+'0+1+2+3+4+5+6+7+8+9'
+>>> '+'.join(string.digits).split('+')
+['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 >>> seq = [1, 2, 3, 4, 5]
 >>> sep = '+'
 >>> sep.join(seq)
