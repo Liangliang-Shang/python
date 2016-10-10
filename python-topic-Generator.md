@@ -30,6 +30,7 @@ a b c
 >>> for i in g:
 ...     print i,
 ...
+>>>
 ```
 > If you don't want to load all the data in the memory, you can use a generator which will pass you each piece of data at a time. 
 It is a good approach to work with lots of data to save the memory.    
