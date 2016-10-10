@@ -1,3 +1,61 @@
+## Iterator
+Require to support two methods    
++ *```__iter__```*    
+Returns the iterator object itself    
++ *```next```*    
+Returns the next value from the iterator. If there is no more items to return, then it should raise *StopIteration* exception    
+```Python
+class Counter(object):
+	def __init__(self, low, high):
+		self.current	= low
+		self.high		= high
+
+	def __iter__(self):
+		'return itself as an iterator object'
+		return self
+
+	def next(self):
+		'return the next value till current is lower than high'
+		if self.current > self.high:
+			raise StopIteration
+		else:
+			self.current += 1
+			return self.current - 1
+```
+```Python
+>>> c = Counter(5, 10)
+>>> for i in c:
+...     print i,
+...
+5 6 7 8 9 10
+>>> c = Counter(0, 1)
+>>> next(c)
+0
+>>> next(c)
+1
+>>> next(c)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 11, in next
+    raise StopIteration
+StopIteration
+>>> next(c)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 11, in next
+    raise StopIteration
+StopIteration
+>>> iterator = iter(Counter(5, 10))
+>>> while True:
+...     try:
+...             x = iterator.next()
+...             print x,
+...     except StopIteration as e:
+...             break
+...
+5 6 7 8 9 10
+```
+
 ## Module    
 + ``` .py ``` file
 + ``` import ```/``` from ... import ```    
