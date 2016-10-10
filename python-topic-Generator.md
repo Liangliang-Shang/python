@@ -74,7 +74,7 @@ class Counter(object):
 ...
 1 2 3 4 5 6 7 8 9
 ```
-+ Generator Expression
++ Generator Expression    
 High performance, memory efficient generalization of list comprehensions and generators    
 ```Python
 >>> l = [x * x for x in range(1, 10)]    # create a list of the square values in memory
