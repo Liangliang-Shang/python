@@ -142,15 +142,6 @@ print digit2NumberDefault(**{'b':2, 'c':3})        # like above, and apply a wit
     123
     23
 
-## Zip two lists into a dict
-
-```Python
->>> keys = ('a', 'b', 'c')
->>> vals = (1, 2, 3)
->>> d    = dict(zip(keys, vals))
->>> d
-{'a': 1, 'c': 3, 'b': 2}
-```
 
 ```python
 # precise division
@@ -239,8 +230,6 @@ for i in range(0, 5) + range(2, 8) + range(3, 12) + [2, 2]:
 # enumerate, sorted, zip
 i = [1, 2, 3, 4]
 s = 'abcd'
-for index, elem in enumerate(s):                   # enumerate returns a generator producing index/elem
-    print index, elem
 print zip(i, s)                                    # zip 
 for index, elem in zip(i, s):
     print index, elem
