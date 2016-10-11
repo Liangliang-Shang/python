@@ -13,7 +13,7 @@
 + zip
 ```Python
 >>> s = 'ABC'
->>> v = [ ord(c) for c in s ]
+>>> v = [ ord(c) for c in s ]    # list comprehension, get a list of the integer ordinals
 >>> d = dict(zip(s, v))
 >>> d
 {'A': 65, 'C': 67, 'B': 66}
