@@ -12,9 +12,9 @@
 ```
 + zip
 ```Python
->>> s = 'ABC'
->>> v = [ ord(c) for c in s ]    # list comprehension, get a list of the integer ordinals
->>> d = dict(zip(s, v))
->>> d
+>>> keys = 'ABC'
+>>> vals = [ ord(k) for k in keys ]
+>>> dict(zip(keys, vals))
 {'A': 65, 'C': 67, 'B': 66}
+>>>
 ```
