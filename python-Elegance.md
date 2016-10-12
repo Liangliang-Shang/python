@@ -18,3 +18,10 @@
 {'A': 65, 'C': 67, 'B': 66}
 >>>
 ```
++ if ... else ...
+```Python
+>>> x, y = 3, 5
+>>> less = x if x < y else y
+>>> print less
+3
+```
