@@ -1,6 +1,13 @@
 # Elegance of python    
 
 ## built-in
++ if ... else ...
+```Python
+>>> x, y = 3, 5
+>>> less = x if x < y else y
+>>> print less
+3
+```
 + enumerate
 ```Python
 >>> for index, char in enumerate('ABC'):
@@ -18,10 +25,10 @@
 {'A': 65, 'C': 67, 'B': 66}
 >>>
 ```
-+ if ... else ...
++ map
 ```Python
->>> x, y = 3, 5
->>> less = x if x < y else y
->>> print less
-3
+>>> map(chr, xrange(65, 68))
+['A', 'B', 'C']
+>>> [ chr(i) for i in xrange(65, 68) ]    # equivalently list comprehension
+['A', 'B', 'C']
 ```
