@@ -150,18 +150,6 @@ print 7/4
 ```
 
     1.75
-    
-
-
-```python
-# nice simple if statement
-x, y = 3, 5
-less = x if x < y else y
-print less
-```
-
-    3
-    
 
 
 ```python
