@@ -1,3 +1,59 @@
+## unittest    
+module f.py
+```Python
+# -*- coding: utf-8 -*-
+
+def f(a, b):
+	'''
+		return 1/i + 1/j + ... equal to a/b
+	'''
+	
+	t = b // a + 1
+	
+	if b % a == 0:
+		return '1/%s' % (b // a)
+	else:
+		return '1/%s + %s' % (t, f(a * t -b, b * t))
+```
+f_unittest.py
+```Python
+# -*- coding: utf-8 -*-
+
+import unittest
+
+from f import f
+
+class TestFunction(unittest.TestCase):
+	'''
+		Basic test class
+	'''
+	
+	def test_f1(self):
+		'''
+			TestCase 1!
+		'''
+		res = f(3, 7)
+		self.assertEqual(res, '1/3 + 1/11 + 1/231')
+
+	def test_f2(self):
+		'''
+			TestCase 2!
+		'''
+		self.assertRaises(ZeroDivisionError, f, 0, 7)
+		
+if __name__ == '__main__':
+	unittest.main()
+```
+```
+$ python f_unittest.py
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+
+```
+
 ## xlwt
 ```Python
 import xlwt
