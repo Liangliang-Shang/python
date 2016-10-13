@@ -32,3 +32,18 @@
 >>> [ chr(i) for i in xrange(65, 68) ]    # equivalently list comprehension
 ['A', 'B', 'C']
 ```
++ with
+```Python
+>>> with open('HelloWorld.py') as f:
+...     f.read()
+...
+```
+## Comprehension
+```Python
+>>> [ chr(i) for i in xrange(65, 69) ]          # list comprehension
+['A', 'B', 'C', 'D']
+>>> { chr(i): i%65 for i in xrange(65, 69) }    # dict comprehension
+{'A': 0, 'C': 2, 'B': 1, 'D': 3}
+>>> { i%2 for i in xrange(65, 69) }             # set comprehension
+set([0, 1])
+```
