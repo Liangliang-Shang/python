@@ -38,6 +38,14 @@
 ...     f.read()
 ...
 ```
++ dict->setdefault
+```Python
+>>> d = dict()
+>>> d.setdefault('A', []).append('America')
+>>> d.setdefault('A', []).append('Africa')
+>>> d
+{'A': ['America', 'Africa']}
+```
 ## Comprehension
 ```Python
 >>> [ chr(i) for i in xrange(65, 69) ]          # list comprehension
