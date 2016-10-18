@@ -111,6 +111,31 @@ IndexError: list assignment index out of range
   + update
   + values and itervalues
 ```Python
+'''
+init a dict / an empty dict
+'''
+>>> dict(), {}
+({}, {})
+'''
+init a dict with the key list and/or their default values
+'''
+>>> {}.fromkeys(['name', 'age'])
+{'age': None, 'name': None}
+>>> dict.fromkeys(['name', 'age'])
+{'age': None, 'name': None}
+>>> dict.fromkeys(['name', 'age'], '(unknown)')
+{'age': '(unknown)', 'name': '(unknown)'}
+'''
+init a dict with items/keyword parameters
+'''
+( dict([('name', 'Gumby'), ('age', 42)]), dict(name='Gumby', age=42))
+form the two lists with the same length into a dict
+'''
+I = [0, 1, 2, 3]
+S = '''abcd'''
+( dict(zip(I, S)), { i:s for (i, s) in zip(I, S) }, { I[i]: S[i] for i in range(len(I)) } )
+```
+```Python
 >>> d = {}
 >>> d['name'] = 'Gumby'
 >>> d['age'] = 42
@@ -162,14 +187,7 @@ None
 >>> c = d.copy()
 >>> dc = deepcopy(d)
 ```
-```Python
->>> {}.fromkeys(['name', 'age'])  # {} constructs an empty dictionary and calls the fromkeys method to create another dictionary 
-{'age': None, 'name': None}
->>> {}.fromkeys(['name', 'age'])  # call the method directly on dict
-{'age': None, 'name': None}
->>> dict.fromkeys(['name', 'age'], '(unknown)') # supplied the default value: '(unknown)'
-{'age': '(unknown)', 'name': '(unknown)'}
-```
+
 ```Python
 >>> d = {}
 >>> print d['name']
