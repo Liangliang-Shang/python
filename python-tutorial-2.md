@@ -69,7 +69,7 @@ Let\'s go!
     print r"This is illegal\"
                             ^
 SyntaxError: EOL while scanning string literal
->>> print r"C:\Program Files" '\\'               # to avoid double back slash to escapte \
+>>> print r"C:\Program Files" '\\'               # to avoid double back slash to escape \
 C:\Program Files\
 >>> 
 ```
@@ -101,8 +101,11 @@ Hello, world!
 ### Concatenate Strings    
 
 ```Python
->>> "Let's say " '"Hello, world!"'
+>>> "Let's say " '"Hello, world!"'    # only works with string literals!!! pretty useful to break long strings
 'Let\'s say "Hello, world!"'
+>>> print('Programs must be written for people to read,'
+...       'and only incidentally for machines to execute.')
+Programs must be written for people to read,and only incidentally for machines to execute.
 >>> "Hello, " + "world!"
 'Hello, world!'
 ```
