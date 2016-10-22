@@ -164,6 +164,7 @@ x: 0.618
 + shebang  
 ```Python
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ```
 + Comments  
 Make sure your comments say significant things and don't simply restate what is already obvious from the code. 
