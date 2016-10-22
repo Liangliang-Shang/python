@@ -9,6 +9,15 @@ f = lambda s: sum( str(s).count(e) for e in str(s) ) == len(str(s))
 f(1), f(11), f(12), f(101), f(102), f('a'), f('ab'), f('too')
 (True, False, True, False, True, True, True, False)
 ```
+```Python
+>>> a, b = 0, 1
+>>> while b < 1000:
+...     print(b, end=',')
+...     a, b = b, a+b
+...
+1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
+```
+
 
 ```python
 def commonFactorial(n=0):
