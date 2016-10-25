@@ -155,11 +155,14 @@ b B
 
 ## Scoping
 ```Python
+>>> vars()         # equivalent to locals(), return a dict containing variables/values
+{'__builtins__': <module 'builtins' (built-in)>, '__spec__': None, '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, 'x': 1, '__name__': '__main__'}
+>>> 'x' in vars().keys()
+False
 >>> x = 1
->>> scope = vars()        # equivalent to locals(), return a dict containing variables/values
->>> scope['x']
-1
->>> scope['x'] += 1
+>>> 'x' in vars().keys()
+True
+>>> vars()['x'] += 1
 >>> x
 2
 ```
