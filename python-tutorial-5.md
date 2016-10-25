@@ -46,9 +46,9 @@ square(x)
 
 ### Function Parameters    
 Parameters are specified within the pair of parentheses in the function definition, separated by commas.    
-+ Local variables
-Inside a function definition, variable names are local to the function. They are not related in any way to other variables with the same names used outside the function.     
-+ global
++ Local variables    
+Inside a function definition, variable names are local to the function. They are not related in any way to other variables with the same names used outside the function. It means functions have their own namespace.      
++ global    
 ```Python
 >>> def try_to_change(n):
 ...     n = 'Mr. Gumby'
