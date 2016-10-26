@@ -199,30 +199,3 @@ Shrubberry
 >>> x
 2
 ```
-## Recursion   
-A useful recursive function usually consists of the following parts:  
-+ A base case (for the smallest possible problem) when the function returns a value directly  
-+ A recursive case, which contains one or more recusrive calls on smaller parts of the problem    
-    
-### Factorial    
-```Python
->>> def factorial(n):
-...     if n == 1:
-...             return 1
-...     else: 
-...             return n * factorial(n-1)
-... 
->>> factorial(5)
-120
-```
-### Power
-```Python
->>> def power(x, n):
-...     if n == 0:
-...             return 1
-...     else:
-...             return x * power(x, n-1)
-... 
->>> power(2, 3)
-8
-```
