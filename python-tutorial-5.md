@@ -70,6 +70,39 @@ False
 >>> n == names                   # they are equal
 True
 ```
++ Default Argument    
+The default values are evaluated at the point of function definition in the defining scope, and only once. 
+```Python
+>>> i = 5
+>>> def f(arg=i):        # evaluate the definition to def f(arg=5):
+...     print(arg)
+... 
+>>> i = 6
+>>> f(i)                 # i got ignored, use the default arg=5.
+6
+>>> def f(a, L=[]):      # evalute L to a list
+...     L.append(a)
+...     return L
+... 
+>>> f(1)                 # L points to the same list
+[1]
+>>> f(2)                 # L points to the same list 
+[1, 2]
+>>> f(3)                 # L points to the same list
+[1, 2, 3]
+>>> def f(a, L=None):    # make the default L point to None
+...     if L is None:
+...         L = []
+...     L.append(a)
+...     return L
+... 
+>>> f(1)                 # L defaults to None, and then inside function L is defined to a local list
+[1]
+>>> f(2)                 # as above
+[2]
+>>> f(3)                 # as above
+[3]
+```
 + Keyword Parameters and Defaults    
 Only those parameters which are at the end of the parameter list can be given default argument values.
 ```Python
@@ -151,6 +184,13 @@ Params:
 >>> printKeywordParams(**d)     # using two stars both  when defining and calling the function
 a A
 b B
+```
+## Lambda Expressions
+```Python
+>>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>> pairs.sort(key=lambda pair: pair[1])
+>>> pairs
+[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 ```
 
 ## Scoping
