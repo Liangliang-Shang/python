@@ -184,6 +184,14 @@ Params:
 >>> printKeywordParams(**d)     # using two stars both  when defining and calling the function
 a A
 b B
+>>> def concat(*args, sep='/'): # get positional parameters into the list args
+...     return sep.join(args)
+... 
+>>> concat('earth', 'mars', 'venus')
+'earth/mars/venus'
+>>> concat('earth', 'mars', 'venus', sep='.')
+'earth.mars.venus'
+>>> 
 ```
 ## Lambda Expressions
 ```Python
