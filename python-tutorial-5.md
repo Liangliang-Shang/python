@@ -143,6 +143,13 @@ TypeError: greeting() takes at least 1 argument (0 given)
 ```
 + Collecting Parameters  
 ```Python
+>>> def concat(*args, sep='/'):         # Gather up positional parameters into args
+...     return sep.join(args)
+... 
+>>> concat('earth', 'mars', 'venus')
+'earth/mars/venus'
+>>> concat('earth', 'mars', 'venus', sep='.')
+'earth.mars.venus'
 >>> def printParams(title, *params):    # the star means "Gather up the rest of the positional parameters
 ...     print title
 ...     print params
@@ -184,14 +191,6 @@ Params:
 >>> printKeywordParams(**d)     # using two stars both  when defining and calling the function
 a A
 b B
->>> def concat(*args, sep='/'): # get positional parameters into the list args
-...     return sep.join(args)
-... 
->>> concat('earth', 'mars', 'venus')
-'earth/mars/venus'
->>> concat('earth', 'mars', 'venus', sep='.')
-'earth.mars.venus'
->>> 
 ```
 ## Lambda Expressions
 ```Python
