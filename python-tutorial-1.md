@@ -178,14 +178,19 @@ IndexError: list assignment index out of range
 >>> numbers
 [1, 2]
 ```
-### List Methods
-  + append
+### Methods
+  + **list.append(x)**    
+  Add an item to the end of the list
   + count
-  + extend
+  + list.extend    
+  Extend the list by appending all the items in the given list. 
   + index
-  + insert
-  + pop
-  + remove
+  + list.insert(i, x)    
+  Insert an item at a given position. 
+  + list.pop(i)    
+  Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list.
+  + list.remove(x)    
+  Remove the first item from the list whose value is x. It is an error if there is no such item.
   + reverse
   + sort    
 
