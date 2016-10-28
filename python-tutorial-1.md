@@ -178,32 +178,44 @@ IndexError: list assignment index out of range
 >>> numbers
 [1, 2]
 ```
-### Methods
+### Methods    
+
+  + **list.copy()**    
+  Return a shallow copy of the list.    
+  + **list.count(x)**    
+  Return the number of times x appears in the list.
+  + **list.index(x)**    
+  Return the index in the list of the first item whose value is x. It is an error if there is no such item.    
+
   + **list.append(x)**    
   Add an item to the end of the list
-  + count
-  + list.extend    
+  + **list.extend(l)**    
   Extend the list by appending all the items in the given list. 
-  + index
-  + list.insert(i, x)    
+  + **list.insert(i, x)**    
   Insert an item at a given position. 
-  + list.pop(i)    
+  + **list.pop(i)**    
   Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list.
-  + list.remove(x)    
-  Remove the first item from the list whose value is x. It is an error if there is no such item.
-  + reverse
-  + sort    
+  + **list.remove(x)**    
+  Remove the first item from the list whose value is x. It is an error if there is no such item.    
+  + **list.reverse()**    
+  Reverse the elements of the list in place.
+  + **list.sort(key=None, reverse=False)**    
+  Sort the items of the list in place
+  + **list.clear()**    
+  Remove all items from the list.    
 
 **Count/Index**
 ```Python
 >>> q = ['to', 'be', 'or', 'not', 'to', 'be']
+>>> q.copy()                                        # Equivalent to q[:]
+['to', 'be', 'or', 'not', 'to', 'be']
 >>> q.count('to')
 2
->>> q.count('is')        # No 'is' in the list
+>>> q.count('is')                                   # No 'is' in the list
 0
->>> q.index('not')       # return the index
+>>> q.index('not')
 3
->>> q.index('is')
+>>> q.index('is')                                   # ValueError!!!
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: 'is' is not in list
@@ -214,33 +226,33 @@ ValueError: 'is' is not in list
 >>> numbers = range(1, 9)
 >>> numbers
 [1, 2, 3, 4, 5, 6, 7, 8]
->>> numbers.insert(0, 0)                 # insert 0 into the list numbers at the index 0
->>> numbers                              # numbers[0:0] = (0, ), what if numbers[0:0] = 'Zero'/('Zero', )???
-[0, 1, 2, 3, 4, 5, 6, 7, 8]
->>> numbers.append(0)                    # append 0 to the tail of the list
->>> numbers                              # numbers[len(numbers):len(numbers)] = 0,
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 0]
->>> numbers.remove(0)                    # remove the first concurrency 0
+>>> numbers.append(9)                    # Equivalent to numbers[len(numbers):] = 9
 >>> numbers
-[1, 2, 3, 4, 5, 6, 7, 8, 0]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> numbers.extend(numbers[0:3])         # Equivalent to numbers[len(numbers):] = numbers[0:3] / numbers + numbers[0:3]
+>>> numbers
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]
+>>> numbers.insert(0, 0)                 # Equivalent to numbers[0:0] = (0, )
+>>> numbers
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]
+>>> numbers.remove(3)                    # Remove the first concurreny 3
+>>> numbers
+[0, 1, 2, 4, 5, 6, 7, 8, 9, 1, 2, 3]
 >>> numbers.pop(4)                       # pop out the element at the index 4, and return the value 5
 5
->>> numbers
-[1, 2, 3, 4, 6, 7, 8, 0]
 >>> numbers.reverse()                    # reverse the list. how about list(reversed(numbers))???
 >>> numbers
-[0, 8, 7, 6, 4, 3, 2, 1]
->>> numbers.extend([5, 9])               # extend numbers with [5, 9]; 5, 9 would append to numbers.
->>> numbers                              # numbers[len(numbers):] = [5, 9]!!! how about numbers + [5, 9]???
-[0, 8, 7, 6, 4, 3, 2, 1, 5, 9]
+[3, 2, 1, 9, 8, 7, 6, 4, 2, 1, 0]
 >>> numbers.sort()                       # sort the list. sort(reverse=True)!!! how about sorted(numbers)???
 >>> numbers
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[0, 1, 1, 2, 2, 3, 4, 6, 7, 8, 9]
 >>> x = ['a', 'another', 'about', 'an']  # sort by the key specified by the argument key
 >>> x.sort(key=len)
 >>> x
 ['a', 'an', 'about', 'another']
->>> x = [4, 6, 2, 1, 7, 9]
+>>> x.clear()                            # Remove all the elements and then become an empty list
+>>> x
+[]
 ```
 More about sort. 
 ```Python
@@ -274,12 +286,27 @@ More about sort.
 ```Python
 >>> a = range(5)
 >>> a.append(1)             # into the queue
->>> a.pop(0)                # out of the queue
+>>> a.pop(0)                # out of the queue (inserting or poping from the begining is going to shift all of the other elements)
 0
 >>> a.pop(0)                # out of the queue
 1
 >>> a
 [2, 3, 4, 1]
+```
+To implement a queue, use collections.deque    
+```Python
+>>> from collections import deque
+>>> queue = deque(list(range(5)))
+>>> queue
+deque([0, 1, 2, 3, 4])
+>>> queue.append(5)
+>>> queue.append(5)
+>>> queue.popleft()
+0
+>>> queue.popleft()
+1
+>>> queue
+deque([2, 3, 4, 5, 5])
 ```
 
 ## Tuples: Immutable Sequences
