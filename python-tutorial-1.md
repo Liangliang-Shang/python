@@ -229,8 +229,8 @@ ValueError: 'is' is not in list
 >>> numbers.append(9)                    # Equivalent to numbers[len(numbers):] = 9
 >>> numbers
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
->>> numbers.extend(numbers[0:3])         # Equivalent to numbers[len(numbers):] = numbers[0:3] / numbers + numbers[0:3]
->>> numbers
+>>> numbers.extend(numbers[0:3])         # Equivalent to numbers[len(numbers):] = numbers[0:3]
+>>> numbers                              #  numbers + numbers[0:3]
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]
 >>> numbers.insert(0, 0)                 # Equivalent to numbers[0:0] = (0, )
 >>> numbers
