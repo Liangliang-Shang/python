@@ -113,15 +113,15 @@ True
 9
 ```
 
-## Lists
-+ The list Function
+## List
++ The list Function    
 Create a list from a string
 ```Python
 >>> list('Hello')                 # ''.join(['H', 'e', 'l', 'l', 'o']) 
 ['H', 'e', 'l', 'l', 'o']
 ```
 
-## Copy of a list
+### Copy of a list
 ```Python
 >>> x = [4, 6, 2, 1, 7, 9]
 
