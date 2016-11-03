@@ -3,14 +3,24 @@
 >>> import sqlalchemy
 >>> sqlalchemy.__version__
 '1.0.12'
->>> engine = sqlalchemy.create_engine('sqlite:///:memory:', echo=True)
+>>> engine = sqlalchemy.create_engine('sqlite:///:memory:')
 >>> engine.execute('SELECT 1').scalar()
-2016-11-03 17:52:23,069 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
-2016-11-03 17:52:23,069 INFO sqlalchemy.engine.base.Engine ()
-2016-11-03 17:52:23,071 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
-2016-11-03 17:52:23,071 INFO sqlalchemy.engine.base.Engine ()
-2016-11-03 17:52:23,072 INFO sqlalchemy.engine.base.Engine SELECT 1
-2016-11-03 17:52:23,072 INFO sqlalchemy.engine.base.Engine ()
 1
->>> 
+>>> from sqlalchemy import Table, MetaData, Column, Integer, String
+>>> metadata = MetaData()
+>>> user =Table('users', metadata, 
+...                 Column('id', Integer, primary_key=True), 
+...                 Column('name', String(50)), 
+...                 Column('fullname', String(50)), 
+...                 Column('password', String(12))
+... )
+>>> class User(object):
+...     def __init__(self, name, fullname, password):
+...         self.name = name
+...         self.fullname = fullname
+...         self.password = password
+... 
+>>> from sqlalchemy.orm import mapper
+>>> mapper(User, user)
+<Mapper at 0x76ad080; User>
 ```
