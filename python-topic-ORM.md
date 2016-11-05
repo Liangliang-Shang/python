@@ -28,6 +28,6 @@ The SQLAlchemy Object Relational Mapper presents a method of associating user-de
 ...         return "<User(name='%s', fullname='%s', password='%s')>" % (self.name, self.fullname, self.password)
 ... 
 >>> User.__table__
-Table('users', MetaData(bind=None), Column('id', Integer(), table=<users>, primary_key=True, nullable=False), Column('name', String(), table=<users>), Column('fullname', String(), table=<users>), Column('password', String(), table=<users>), schema=None)
+Table('users', MetaData(bind=None), Column('id', Integer(), table=<users>, primary_key=True, nullable=False), ...)
 >>> Base.metadata.create_all(engine)
 ```
