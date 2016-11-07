@@ -31,3 +31,9 @@ The SQLAlchemy Object Relational Mapper presents a method of associating user-de
 Table('users', MetaData(bind=None), Column('id', Integer(), table=<users>, primary_key=True, nullable=False), ...)
 >>> Base.metadata.create_all(engine)
 ```
++ Sequential Field & length-limited Field
+```Python
+>>> from sqlalchemy import Sequence
+>>> Column(Integer, Sequence('user_id_seq'), primary_key=True)
+>>> Column(String(50))
+```
