@@ -23,9 +23,8 @@ The SQLAlchemy Object Relational Mapper presents a method of associating user-de
 ...     id = Column(Integer, primary_key=True)
 ...     name = Column(String)
 ...     fullname = Column(String)
-...     password = Column(String)
 ...     def __repr__(self):
-...         return "<User(name='%s', fullname='%s', password='%s')>" % (self.name, self.fullname, self.password)
+...         return "<User(name='%s', fullname='%s')>" % (self.name, self.fullname)
 ... 
 >>> User.__table__
 Table('users', MetaData(bind=None), Column('id', Integer(), table=<users>, primary_key=True, nullable=False), ...)
@@ -36,4 +35,28 @@ Table('users', MetaData(bind=None), Column('id', Integer(), table=<users>, prima
 >>> from sqlalchemy import Sequence
 >>> Column(Integer, Sequence('user_id_seq'), primary_key=True)
 >>> Column(String(50))
+```
+## Create an instance of the Mapped Class
+```Python
+>>> ed_user = User(name='ed', fullname='Ed Jones')
+>>> ed_user.name
+'ed'
+>>> ed_user.fullname
+'Ed Jones'
+>>> str(ed_user)
+"<User(name='ed', fullname='Ed Jones')"
+```
+## Create a session
+```Python
+>>> from sqlalchemy.orm import sessionmaker
+>>> Session = sessionmaker(bind=engine)
+>>> session = Session()
+```
+## Add & update objects
+```Python
+>>> user = User(name='Lynn', fullname='Lynn Shang')
+>>> session.add(user)
+>>> session.commit()
+>>> session.query(User).filter_by(name='Lynn').first()
+<User(name='Lynn', fullname='Lynn Shang')
 ```
