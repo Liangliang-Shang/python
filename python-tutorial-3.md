@@ -26,27 +26,33 @@ Dictionary: unordered set of key: value pairs where keys are unique.
 >>> d5 = dict({'one': 1, 'two': 2, 'three': 3})          # Copy of a dict
 >>> type(d1)
 <class 'dict'>                                           # The dict is not really a function. It is a type/class.
-d1 == d2 == d3 == d4 == d5
->>> phonebook = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
->>> phonebook['Cecil']                                   # Access to/Retrieve the value from a dict with its key
-'3258'
->>> phonebook['Dina'] = '7625'                           # Simplely add one more key/value pair into a dict
->>> phonebook
-{'Beth': '9102', 'Alice': '2341', 'Dina': '7625', 'Cecil': '3258'}
->>> del phonebook['Beth']
->>> phonebook
-{'Alice': '2341', 'Dina': '7625', 'Cecil': '3258'}
+>>> d1 == d2 == d3 == d4 == d5
+True
+>>> d1
+{'three': 3, 'one': 1, 'two': 2}
 ```
 
-### Basice Dictionary Operations  
+### Dictionary operations  
++ len(d)    
++ d[key]    
++ d[key] = value
 
 ```Python
->>> d
-{'age': 42, 'name': 'Gumby'}
->>> len(d)
-2
->>> 'name' in d
-True
+>>> d1
+{'three': 3, 'one': 1, 'two': 2}
+>>> len(d1)
+3
+>>> d1['one']
+1
+>>> d1['four']                                # The key 'four' not in d1, throws KeyError
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'four'
+>>> 'four' in d1
+False
+>>> d1['four'] = 4
+>>> d1
+{'three': 3, 'one': 1, 'four': 4, 'two': 2}
 ```
 
 ```Python
