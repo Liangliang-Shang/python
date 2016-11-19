@@ -1,4 +1,4 @@
-## Dictionary  
+
 > Telephone numbers (and other numbers that may contain leading zeros) should be represented as strings of digits - not integers.  
 > Octal numbers are written with an initial zero.  
 
@@ -8,6 +8,7 @@
 >>> numbers[names.index('Cecil')]
 '3158'
 ```
+## Dictionary  
 Dictionary: unordered set of key: value pairs where keys are unique. 
 
 ### Dictionary Syntax  
@@ -18,6 +19,14 @@ Dictionary: unordered set of key: value pairs where keys are unique.
 > An empty dictionary without any items is written with just two curly braces, like this: {}.  
 
 ```Python
+>>> d1 = {'one': 1, 'two': 2, 'three': 3}
+>>> d2 = dict(one=1, two=2, three=3)                     
+>>> d3 = dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # Zip two lists
+>>> d4 = dict([('two', 2), ('one', 1), ('three', 3)])    # Map the tuple of (key, value)/pairs in a list
+>>> d5 = dict({'one': 1, 'two': 2, 'three': 3})          # Copy of a dict
+>>> type(d1)
+<class 'dict'>                                           # The dict is not really a function. It is a type/class.
+d1 == d2 == d3 == d4 == d5
 >>> phonebook = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
 >>> phonebook['Cecil']                                   # Access to/Retrieve the value from a dict with its key
 '3258'
@@ -27,23 +36,6 @@ Dictionary: unordered set of key: value pairs where keys are unique.
 >>> del phonebook['Beth']
 >>> phonebook
 {'Alice': '2341', 'Dina': '7625', 'Cecil': '3258'}
-```
-
-+ The dict Function  
-  The dict function isn't really a function at all. It is a type, just like list, tuple, and str.  
-```Python
->>> keys = ('a', 'b', 'c')
->>> vals = (1, 2, 3)
->>> d    = dict(zip(keys, vals))                      # Zip two lists to make a dict
->>> d
-{'a': 1, 'c': 3, 'b': 2}
->>> items = [('name', 'Gumby'), ('age', 42)]          # lists of tuples: (key, value) pairs
->>> d = dict(items)
->>> d
-{'age': 42, 'name': 'Gumby'}
->>> d = dict(name='Gumby', age=42)                    # use keyword arguments
->>> d
-{'age': 42, 'name': 'Gumby'}
 ```
 
 ### Basice Dictionary Operations  
